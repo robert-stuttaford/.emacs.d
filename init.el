@@ -20,7 +20,7 @@
                       ack-and-a-half
                       ;; Misc.
                       markdown-mode
-                      twilight-theme
+                      color-theme-sanityinc-tomorrow
                       hlinum
                       powerline)
   "A list of packages to ensure are installed at launch.")
@@ -32,6 +32,9 @@
 
 ;; Load the provided Clojure start kit configurations
 (load (concat user-emacs-directory "clojure-starter-kit.el"))
+
+;; Load key bindings.
+(load (concat user-emacs-directory "keybinds.el"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -48,11 +51,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector [default bold shadow italic underline bold bold-italic bold])
+ '(ansi-color-names-vector (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
  '(auto-save-default nil)
  '(backup-inhibited t t)
  '(delete-selection-mode t)
+ '(fci-rule-color "#393939")
  '(nrepl-host "localhost")
- '(nrepl-port "9991"))
-
-;; Load key bindings.
-(load (concat user-emacs-directory "keybinds.el"))
+ '(nrepl-port "9991")
+ '(vc-annotate-background nil)
+ '(vc-annotate-color-map (quote ((20 . "#f2777a") (40 . "#f99157") (60 . "#ffcc66") (80 . "#99cc99") (100 . "#66cccc") (120 . "#6699cc") (140 . "#cc99cc") (160 . "#f2777a") (180 . "#f99157") (200 . "#ffcc66") (220 . "#99cc99") (240 . "#66cccc") (260 . "#6699cc") (280 . "#cc99cc") (300 . "#f2777a") (320 . "#f99157") (340 . "#ffcc66") (360 . "#99cc99"))))
+ '(vc-annotate-very-old-color nil))
