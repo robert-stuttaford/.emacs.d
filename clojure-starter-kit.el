@@ -36,9 +36,9 @@
 (setq cider-popup-stacktraces-in-repl t)                                   ; Display stacktrace inline
 
 (add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)          ; Enable eldoc - shows fn argument list in echo area
-(add-hook 'cider-mode-hook 'paredit-mode)                                  ; Use paredit in *cider* buffer
+(add-hook 'cider-repl-mode-hook 'paredit-mode)                             ; Use paredit in *cider* buffer
 
-(add-to-list 'same-window-buffer-names "*cider*")                          ; Make C-c C-z switch to *cider*
+(add-to-list 'same-window-buffer-names "*cider")                          ; Make C-c C-z switch to *cider*
 
 
 ;; Ido-mode customizations
