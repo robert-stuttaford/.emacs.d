@@ -4,14 +4,16 @@
 (global-set-key [f4] (lambda () (interactive) (find-file "~/Development/Builder/project.clj")))
 (global-set-key (kbd "M-<f1>") (lambda () (interactive) (find-file "~/Development/builder-pedestal/project.clj")))
 (global-set-key (kbd "M-<f2>") (lambda () (interactive) (find-file "~/Development/builder-pedestal-service/project.clj")))
+(global-set-key (kbd "M-<f3>") (lambda () (interactive) (find-file "~/Development/Elf/project.clj")))
+
 
 (global-set-key (kbd "<f5>") 'rgrep)
 
 (global-set-key (kbd "<f6>") 'highlight-regexp)
 (global-set-key (kbd "M-<f6>") 'unhighlight-regexp)
 
-(global-set-key [f8] 'nrepl)
-(global-set-key (kbd "M-<f9>") 'nrepl-quit)
+(global-set-key [f8] 'cider)
+(global-set-key (kbd "M-<f9>") 'cider-quit)
 
 (global-set-key [f10] (lambda () (interactive) (clojure-cheatsheet)))
 
