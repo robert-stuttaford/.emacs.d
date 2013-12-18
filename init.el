@@ -18,7 +18,6 @@
                       cider
                       popup
                       rainbow-delimiters
-                      expectations-mode
                       ;; Project navigation
                       projectile
                       ack-and-a-half
@@ -72,20 +71,7 @@
 
 (split-window-right)
 
-(require 'clojure-mode)
-
-(define-clojure-indent
-  (expect 'defun)
-  (expect-let 'defun)
-  (given 'defun)
-  (context 1)
-  (freeze-time 1)
-  (redef-state 1)
-  (from-each 1))
-
 (menu-bar-mode t)
-
-(setenv "EXPECTATIONS_COLORIZE" "false")
 
 (add-hook 'clojure-mode-hook
  (lambda ()
