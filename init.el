@@ -17,7 +17,6 @@
                       clojure-mode
                       cider
                       popup
-                      ac-nrepl
                       rainbow-delimiters
                       expectations-mode
                       ;; Project navigation
@@ -100,15 +99,3 @@
     (open-line 1)))
 
 (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
-
-;; setup auto complete
-(add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
-(require 'auto-complete-config)
-(ac-config-default)
-
-;; setup auto-complete for nrepl/cider (clojure)
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-repl-mode))
