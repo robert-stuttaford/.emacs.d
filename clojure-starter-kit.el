@@ -30,13 +30,13 @@
 (setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
 (setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
 
-
 ;; nREPL customizations
 (setq cider-popup-stacktraces nil)                                         ; Don't aggresively popup stacktraces
 (setq cider-popup-stacktraces-in-repl t)                                   ; Display stacktrace inline
 
 (add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)          ; Enable eldoc - shows fn argument list in echo area
 (add-hook 'cider-repl-mode-hook 'paredit-mode)                             ; Use paredit in *cider* buffer
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 (add-to-list 'same-window-buffer-names "*cider")                          ; Make C-c C-z switch to *cider*
 

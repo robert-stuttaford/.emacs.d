@@ -1,8 +1,8 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -25,7 +25,12 @@
                       markdown-mode
                       color-theme-sanityinc-tomorrow
                       hlinum
-                      powerline)
+                      powerline
+                      clj-refactor
+                      yasnippet
+                      buffer-move
+                      align-cljlet
+                      color-identifiers-mode)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -85,3 +90,103 @@
     (open-line 1)))
 
 (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
+
+(require 'clj-refactor)
+
+(add-hook 'clojure-mode-hook
+          (lambda ()
+            (clj-refactor-mode 1)
+            (cljr-add-keybindings-with-prefix "s-r")))
+
+(yas-global-mode 1)
+
+(global-set-key (kbd "<M-s-right>") 'buf-move-right)
+(global-set-key (kbd "<M-s-left>") 'buf-move-left)
+(global-set-key (kbd "<M-s-up>") 'buf-move-up)
+(global-set-key (kbd "<M-s-down>") 'buf-move-down)
+
+;; Toggle window dedication
+(defun toggle-window-dedicated ()
+  "Toggle whether the current active window is dedicated or not"
+  (interactive)
+  (message 
+   (if (let (window (get-buffer-window (current-buffer)))
+         (set-window-dedicated-p window 
+                                 (not (window-dedicated-p window))))
+       "Window '%s' is dedicated"
+     "Window '%s' is normal")
+   (current-buffer)))
+
+(global-set-key [f7] 'toggle-window-dedicated)
+
+;; Window movement
+(global-set-key [s-left] 'windmove-left)
+(global-set-key [s-right] 'windmove-right)
+(global-set-key [s-up] 'windmove-up)
+(global-set-key [s-down] 'windmove-down)
+
+
+(defun win-resize-top-or-bot ()
+  "Figure out if the current window is on top, bottom or in the
+middle"
+  (let* ((win-edges (window-edges))
+	 (this-window-y-min (nth 1 win-edges))
+	 (this-window-y-max (nth 3 win-edges))
+	 (fr-height (frame-height)))
+    (cond
+     ((eq 0 this-window-y-min) "top")
+     ((eq (- fr-height 1) this-window-y-max) "bot")
+     (t "mid"))))
+
+(defun win-resize-left-or-right ()
+  "Figure out if the current window is to the left, right or in the
+middle"
+  (let* ((win-edges (window-edges))
+	 (this-window-x-min (nth 0 win-edges))
+	 (this-window-x-max (nth 2 win-edges))
+	 (fr-width (frame-width)))
+    (cond
+     ((eq 0 this-window-x-min) "left")
+     ((eq (+ fr-width 4) this-window-x-max) "right")
+     (t "mid"))))
+
+(defun win-resize-enlarge-vert ()
+  (interactive)
+  (cond
+   ((equal "top" (win-resize-top-or-bot)) (enlarge-window -5))
+   ((equal "bot" (win-resize-top-or-bot)) (enlarge-window 5))
+   ((equal "mid" (win-resize-top-or-bot)) (enlarge-window -5))
+   (t (message "nil"))))
+
+(defun win-resize-minimize-vert ()
+  (interactive)
+  (cond
+   ((equal "top" (win-resize-top-or-bot)) (enlarge-window 5))
+   ((equal "bot" (win-resize-top-or-bot)) (enlarge-window -5))
+   ((equal "mid" (win-resize-top-or-bot)) (enlarge-window 5))
+   (t (message "nil"))))
+
+(defun win-resize-enlarge-horiz ()
+  (interactive)
+  (cond
+   ((equal "left" (win-resize-left-or-right)) (enlarge-window-horizontally -30))
+   ((equal "right" (win-resize-left-or-right)) (enlarge-window-horizontally 30))
+   ((equal "mid" (win-resize-left-or-right)) (enlarge-window-horizontally 30))))
+
+(defun win-resize-minimize-horiz ()
+  (interactive)
+  (cond
+   ((equal "left" (win-resize-left-or-right)) (enlarge-window-horizontally 30))
+   ((equal "right" (win-resize-left-or-right)) (enlarge-window-horizontally -30))
+   ((equal "mid" (win-resize-left-or-right)) (enlarge-window-horizontally -30))))
+
+(global-set-key [s-S-left] 'win-resize-enlarge-horiz)
+(global-set-key [s-S-right] 'win-resize-minimize-horiz)
+(global-set-key [s-S-up] 'win-resize-enlarge-vert)
+(global-set-key [s-S-down] 'win-resize-minimize-vert)
+
+(require 'align-cljlet)
+
+(global-set-key (kbd "s-i") 'align-cljlet)
+
+(global-set-key (kbd "C-<f12>") 'color-identifiers-mode)

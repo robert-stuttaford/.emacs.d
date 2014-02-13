@@ -7,7 +7,7 @@
                   (find-file "~/Development/builder-pedestal/project.clj")))
 (global-set-key (kbd "M-<f2>")
                 (lambda () (interactive)
-                  (find-file "~/Development/builder-pedestal-service/project.clj")))
+                  (find-file "~/Development/FrontLine/project.clj")))
 (global-set-key (kbd "M-<f3>")
                 (lambda () (interactive)
                   (find-file "~/Development/Elf/project.clj")))
