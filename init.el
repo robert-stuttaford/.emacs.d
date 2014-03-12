@@ -30,7 +30,9 @@
                       yasnippet
                       buffer-move
                       align-cljlet
-                      color-identifiers-mode)
+                      color-identifiers-mode
+                      highlight
+                      nrepl-eval-sexp-fu)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -190,3 +192,16 @@ middle"
 (global-set-key (kbd "s-i") 'align-cljlet)
 
 (global-set-key (kbd "C-<f12>") 'color-identifiers-mode)
+(put 'downcase-region 'disabled nil)
+
+;; highlight expression on eval
+(require 'highlight)
+(require 'nrepl-eval-sexp-fu)
+(setq nrepl-eval-sexp-fu-flash-duration 0.5)
+
+;; Highlight stuff in whitespace-mode
+(setq-default whitespace-line-column 90)
+(setq whitespace-style
+      '(face spaces tabs trailing empty tab-mark
+             space-before-tab space-after-tab lines-tail))
+(global-whitespace-mode 1)
