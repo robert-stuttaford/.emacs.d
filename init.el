@@ -111,9 +111,9 @@
 (defun toggle-window-dedicated ()
   "Toggle whether the current active window is dedicated or not"
   (interactive)
-  (message 
+  (message
    (if (let (window (get-buffer-window (current-buffer)))
-         (set-window-dedicated-p window 
+         (set-window-dedicated-p window
                                  (not (window-dedicated-p window))))
        "Window '%s' is dedicated"
      "Window '%s' is normal")
@@ -201,7 +201,25 @@ middle"
 
 ;; Highlight stuff in whitespace-mode
 (setq-default whitespace-line-column 90)
-(setq whitespace-style
-      '(face spaces tabs trailing empty tab-mark
-             space-before-tab space-after-tab lines-tail))
 (global-whitespace-mode 1)
+
+(defun cider-repl-reset ()
+  (interactive)
+  (save-some-buffers)
+  (with-current-buffer (cider-current-repl-buffer)
+    (goto-char (point-max))
+    (insert "(user/reset)")
+    (cider-repl-return)))
+
+(global-set-key (kbd "C-c r") 'cider-repl-reset)
+
+(require 'cider)
+(setq cider-known-endpoints '(("localhost" "9991")
+                              ("nr-t1" "9980")
+                              ("nr-t2" "9981")
+                              ("nr-t3" "9982")
+                              ("nr-t4" "9983")
+                              ("nr-t5" "9984")
+                              ("nr-prod" "9995")))
+
+(add-hook 'before-save-hook 'whitespace-cleanup)

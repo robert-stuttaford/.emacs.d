@@ -1,7 +1,7 @@
 (global-set-key [f1] (lambda () (interactive) (find-file "~/Development/Server/dev/user.clj")))
 (global-set-key [f2] (lambda () (interactive) (find-file "~/Development/C2/project.clj")))
 (global-set-key [f3] (lambda () (interactive) (find-file "~/Development/Core/project.clj")))
-(global-set-key [f4] (lambda () (interactive) (find-file "~/Development/Builder/project.clj")))
+(global-set-key [f4] (lambda () (interactive) (find-file "~/Development/Hex/project.clj")))
 (global-set-key (kbd "M-<f3>")
                 (lambda () (interactive)
                   (find-file "~/Development/Elf/project.clj")))
