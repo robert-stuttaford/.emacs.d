@@ -228,7 +228,13 @@ middle"
 
 (define-clojure-indent
   (display-name 'defun)
+  (init-state 'defun)
+  (will-mount 'defun)
+  (did-mount 'defun)
+  (will-unmount 'defun)
   (render 'defun)
   (render-state 'defun)
-  (will-mount 'defun)
-  (init-state 'defun))
+  (should-update 'defun)
+  (will-update 'defun)
+  (will-receive-props 'defun)
+  (did-update 'defun))
