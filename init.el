@@ -223,3 +223,12 @@ middle"
                               ("nr-prod" "9995")))
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; om & om-tools indenting
+
+(define-clojure-indent
+  (display-name 'defun)
+  (render 'defun)
+  (render-state 'defun)
+  (will-mount 'defun)
+  (init-state 'defun))
