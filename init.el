@@ -237,4 +237,5 @@ middle"
   (should-update 'defun)
   (will-update 'defun)
   (will-receive-props 'defun)
-  (did-update 'defun))
+  (did-update 'defun)
+  (for-map 'defun))
