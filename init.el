@@ -224,9 +224,9 @@ middle"
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-;; om & om-tools indenting
 
 (define-clojure-indent
+  ;; om & om-tools indenting
   (display-name 'defun)
   (init-state 'defun)
   (will-mount 'defun)
@@ -238,4 +238,7 @@ middle"
   (will-update 'defun)
   (will-receive-props 'defun)
   (did-update 'defun)
-  (for-map 'defun))
+  ;; prismatic plumbing
+  (for-map 'defun)
+  ;; compojure
+  (context 'defun))
