@@ -4,6 +4,7 @@
 (global-set-key [f4] (lambda () (interactive) (find-file "~/Development/Elf/project.clj")))
 (global-set-key (kbd "M-<f1>") (lambda () (interactive) (find-file "~/Development/Sphinx/dev/user.clj")))
 (global-set-key (kbd "M-<f2>") (lambda () (interactive) (find-file "~/Development/Cogbot/dev/user.clj")))
+(global-set-key (kbd "M-<f3>") (lambda () (interactive) (find-file "~/Development/Builder/project.clj")))
 
 (global-set-key (kbd "<f5>") 'rgrep)
 
