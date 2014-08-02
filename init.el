@@ -243,4 +243,6 @@ middle"
   ;; prismatic plumbing
   (for-map 'defun)
   ;; compojure
-  (context 'defun))
+  (context 'defun)
+  ;;
+  (let-programs 'defun))
