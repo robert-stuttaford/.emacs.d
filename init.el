@@ -16,6 +16,7 @@
                       ;; Clojure & friends
                       clojure-mode
                       cider
+                      company
                       popup
                       rainbow-delimiters
                       ;; Project navigation
@@ -202,6 +203,8 @@ middle"
 ;; Highlight stuff in whitespace-mode
 (setq-default whitespace-line-column 90)
 (global-whitespace-mode 1)
+
+(company-mode)
 
 (defun cider-repl-reset ()
   (interactive)
