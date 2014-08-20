@@ -245,6 +245,7 @@ middle"
   (did-update 'defun)
   ;; prismatic plumbing
   (for-map 'defun)
+  (letk 'defun)
   ;; compojure
   (context 'defun)
   ;;
