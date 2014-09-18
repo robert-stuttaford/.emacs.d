@@ -216,6 +216,16 @@ middle"
 
 (global-set-key (kbd "C-c r") 'cider-repl-reset)
 
+(defun cider-repl-dev-reset ()
+  (interactive)
+  (save-some-buffers)
+  (with-current-buffer (cider-current-repl-buffer)
+    (goto-char (point-max))
+    (insert "(user/dev-reset)")
+    (cider-repl-return)))
+
+(global-set-key (kbd "C-c R") 'cider-repl-dev-reset)
+
 (require 'cider)
 (setq cider-known-endpoints '(("localhost" "9991")
                               ("nr-t1" "9980")
