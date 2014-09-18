@@ -249,4 +249,11 @@ middle"
   ;; compojure
   (context 'defun)
   ;;
-  (let-programs 'defun))
+  (let-programs 'defun)
+  ;; component
+  (start 'defun)
+  (stop 'defun)
+  (init 'defun)
+  (db 'defun)
+  (conn 'defun)
+  )
