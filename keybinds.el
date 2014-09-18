@@ -2,10 +2,14 @@
 (global-set-key [f2] (lambda () (interactive) (find-file "~/Development/C2/project.clj")))
 (global-set-key [f3] (lambda () (interactive) (find-file "~/Development/Core/project.clj")))
 (global-set-key [f4] (lambda () (interactive) (find-file "~/Development/Elf/project.clj")))
+
 (global-set-key (kbd "M-<f1>") (lambda () (interactive) (find-file "~/Development/Sphinx/dev/user.clj")))
 (global-set-key (kbd "M-<f2>") (lambda () (interactive) (find-file "~/Development/Cogbot/dev/user.clj")))
 (global-set-key (kbd "M-<f3>") (lambda () (interactive) (find-file "~/Development/Builder/project.clj")))
 (global-set-key (kbd "M-<f4>") (lambda () (interactive) (find-file "~/Development/Spren/project.clj")))
+
+(global-set-key (kbd "M-s-<f1>") (lambda () (interactive) (find-file "~/Development/Hex/dev/user.clj")))
+(global-set-key (kbd "M-s-<f2>") (lambda () (interactive) (find-file "~/Development/Brainstorm/src/cognician/brainstorm/topology.clj")))
 
 (global-set-key (kbd "<f5>") 'rgrep)
 
@@ -19,3 +23,8 @@
 
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
+
+(define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
+(define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
+(define-key projectile-mode-map [?\s-f] 'projectile-find-file)
+(define-key projectile-mode-map [?\s-g] 'projectile-grep)
