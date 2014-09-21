@@ -11,6 +11,7 @@
 (global-set-key (kbd "M-s-<f1>") (lambda () (interactive) (find-file "~/Development/Hex/dev/user.clj")))
 (global-set-key (kbd "M-s-<f2>") (lambda () (interactive) (find-file "~/Development/Spren/project.clj")))
 (global-set-key (kbd "M-s-<f3>") (lambda () (interactive) (find-file "~/Development/Brainstorm/src/cognician/brainstorm/topology.clj")))
+(global-set-key (kbd "M-s-<f4>") (lambda () (interactive) (find-file "~/Development/stuttaford.me/dev/user.clj")))
 
 (global-set-key (kbd "<f5>") 'rgrep)
 
