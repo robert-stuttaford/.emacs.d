@@ -30,3 +30,15 @@
 (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
 (define-key projectile-mode-map [?\s-f] 'projectile-find-file)
 (define-key projectile-mode-map [?\s-g] 'projectile-grep)
+
+(defun find-project-file (file)
+  (find-file (expand-file-name file (projectile-project-root))))
+
+(global-set-key [f9]
+                (lambda () (interactive)
+                  (find-project-file "dev/user.clj")))
+
+(global-set-key [f10]
+                (lambda () (interactive)
+                  (find-project-file "project.clj")))
+
