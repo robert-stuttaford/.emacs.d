@@ -9,7 +9,7 @@
 (global-set-key (kbd "M-<f4>") (lambda () (interactive) (find-file "~/Development/Spren/project.clj")))
 
 (global-set-key (kbd "M-s-<f1>") (lambda () (interactive) (find-file "~/Development/Hex/dev/user.clj")))
-(global-set-key (kbd "M-s-<f2>") (lambda () (interactive) (find-file "~/Development/Spren/project.clj")))
+(global-set-key (kbd "M-s-<f2>") (lambda () (interactive) (find-file "~/Development/dive-into-datomic/dev/user.clj")))
 (global-set-key (kbd "M-s-<f3>") (lambda () (interactive) (find-file "~/Development/Highstorm/dev/user.clj")))
 (global-set-key (kbd "M-s-<f4>") (lambda () (interactive) (find-file "~/Development/stuttaford.me/dev/user.clj")))
 
