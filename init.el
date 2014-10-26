@@ -233,7 +233,7 @@ middle"
                               ("nr-t3" "9982")
                               ("nr-t4" "9983")
                               ("nr-t5" "9984")
-                              ("nr-db1" "9995")
+                              ("nr-db2" "9995")
                               ("nr-web1" "9996")
                               ("nr-web2" "9997")))
 
@@ -256,6 +256,7 @@ middle"
   ;; prismatic plumbing
   (for-map 'defun)
   (letk 'defun)
+  (fnk 'defun)
   ;; compojure
   (context 'defun)
   ;;

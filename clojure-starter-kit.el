@@ -24,6 +24,7 @@
 (setq visible-bell nil)                                                    ; No more Mr. Visual Bell Guy.
 (setq ring-bell-function #'ignore)                                         ; No more annoying boop sound when scrolling on OSX.
 
+(require 'powerline)
 (powerline-center-theme)                                                   ; enable centered powerline
 
 ;; Clojure
