@@ -18,10 +18,8 @@
 (global-set-key (kbd "<f6>") 'highlight-regexp)
 (global-set-key (kbd "M-<f6>") 'unhighlight-regexp)
 
-(global-set-key [f8] 'cider)
-(global-set-key (kbd "M-<f9>") 'cider-quit)
-
-(global-set-key [f10] (lambda () (interactive) (clojure-cheatsheet)))
+(global-set-key [f8] 'cider-connect)
+(global-set-key (kbd "M-<f8>") 'cider-quit)
 
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
