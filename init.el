@@ -33,7 +33,9 @@
                       align-cljlet
                       color-identifiers-mode
                       highlight
-                      nrepl-eval-sexp-fu)
+                      nrepl-eval-sexp-fu
+                      paxedit
+                      git-link)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -226,6 +228,10 @@ middle"
 
 (global-set-key (kbd "C-c R") 'cider-repl-dev-reset)
 
+(require 'git-link)
+(custom-set-variables '(git-link-open-in-browser t))
+(global-set-key (kbd "C-M-g") 'git-link)
+
 (require 'cider)
 (setq cider-known-endpoints '(("localhost" "9991")
                               ("nr-t1" "9980")
@@ -270,3 +276,22 @@ middle"
   (db 'defun)
   (conn 'defun)
   )
+
+(require 'paxedit)
+(add-hook 'clojure-mode-hook 'paxedit-mode)
+
+(eval-after-load "paxedit"
+  '(progn (define-key paxedit-mode-map (kbd "C-M-<right>") 'paxedit-transpose-forward)
+          (define-key paxedit-mode-map (kbd "C-M-<left>") 'paxedit-transpose-backward)
+          (define-key paxedit-mode-map (kbd "C-M-<up>") 'paxedit-backward-up)
+          (define-key paxedit-mode-map (kbd "C-M-<down>") 'paxedit-backward-end)
+          (define-key paxedit-mode-map (kbd "M-b") 'paxedit-previous-symbol)
+          (define-key paxedit-mode-map (kbd "M-f") 'paxedit-next-symbol)
+          (define-key paxedit-mode-map (kbd "C-%") 'paxedit-copy)
+          (define-key paxedit-mode-map (kbd "C-&") 'paxedit-kill)
+          (define-key paxedit-mode-map (kbd "C-*") 'paxedit-delete)
+          (define-key paxedit-mode-map (kbd "C-^") 'paxedit-sexp-raise)
+          (define-key paxedit-mode-map (kbd "M-u") 'paxedit-symbol-change-case)
+          (define-key paxedit-mode-map (kbd "C-@") 'paxedit-symbol-copy)
+          (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
+
