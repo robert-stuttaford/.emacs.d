@@ -40,3 +40,7 @@
                 (lambda () (interactive)
                   (find-project-file "project.clj")))
 
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(setq show-paren-style 'expression)
