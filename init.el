@@ -57,7 +57,7 @@
  '(font-lock-warning-face ((((class color) (min-colors 89)) (:weight bold :foreground "#cc0000"))))
  '(idle-highlight ((t (:inherit region :background "maroon4"))))
  '(linum-highlight-face ((t (:inherit default :background "color-238" :foreground "white"))) t)
- '(show-paren-match ((t (:background "dark blue" :foreground "gray80")))))
+ '(show-paren-match ((t (:background "gray53" :foreground "black")))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -252,6 +252,15 @@ middle"
 
 (global-set-key (kbd "C-c R") 'cider-repl-dev-reset)
 
+(defun cider-class-path ()
+  (interactive)
+  (with-current-buffer (cider-current-repl-buffer)
+    (goto-char (point-max))
+    (insert "(pprint (sort (.split (System/getProperty \\\"java.class.path\\\") \\\":\\\")))")
+    (cider-repl-return)))
+
+(global-set-key (kbd "C-c P") 'cider-class-path)
+
 (require 'git-link)
 
 (global-set-key (kbd "C-M-g") 'git-link)
@@ -271,6 +280,12 @@ middle"
 
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
+;;; Turn on expression highlighting
+
+(show-paren-mode 1)
+(setq-default blink-matching-paren nil
+              show-paren-style 'expression
+              show-paren-delay 0)
 
 (define-clojure-indent
   ;; om & om-tools indenting
