@@ -35,7 +35,8 @@
                       highlight
                       nrepl-eval-sexp-fu
                       paxedit
-                      git-link)
+                      git-link
+                      expand-region)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
