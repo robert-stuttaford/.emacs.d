@@ -320,6 +320,8 @@ middle"
 (require 'paxedit)
 (add-hook 'clojure-mode-hook 'paxedit-mode)
 
+(add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
+
 (eval-after-load "paxedit"
   '(progn (define-key paxedit-mode-map (kbd "C-M-<right>") 'paxedit-transpose-forward)
           (define-key paxedit-mode-map (kbd "C-M-<left>") 'paxedit-transpose-backward)
