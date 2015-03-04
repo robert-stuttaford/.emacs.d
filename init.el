@@ -321,6 +321,7 @@ middle"
 (add-hook 'clojure-mode-hook 'paxedit-mode)
 
 (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
+(add-to-list 'auto-mode-alist '("\\.hiccup\\'" . clojure-mode))
 
 (eval-after-load "paxedit"
   '(progn (define-key paxedit-mode-map (kbd "C-M-<right>") 'paxedit-transpose-forward)
