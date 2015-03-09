@@ -1,5 +1,5 @@
 (global-set-key [f1] (lambda () (interactive) (find-file "~/Cognician/Server/dev/user.clj")))
-(global-set-key [f2] (lambda () (interactive) (find-file "~/Cognician/Hex/dev/user.clj")))
+(global-set-key [f2] (lambda () (interactive) (find-file "~/Cognician/Hex/dev/dev.clj")))
 (global-set-key [f3] (lambda () (interactive) (find-file "~/Cognician/Highstorm/dev/user.clj")))
 (global-set-key [f4] (lambda () (interactive) (find-file "~/Cognician/C3/build.boot")))
 
