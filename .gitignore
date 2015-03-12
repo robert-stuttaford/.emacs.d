@@ -8,3 +8,4 @@ ac-comphist.dat
 .mc-lists.el
 url/
 projectile.cache
+tramp
