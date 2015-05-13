@@ -110,7 +110,7 @@
 
 (add-hook 'clojure-mode-hook
  (lambda ()
-  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\|spy/d\\|spy/p\\|spy/t\\)" 1
+  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1
                                  font-lock-warning-face t)))))
 
 ;; Add an extra newline to separate commit message from git commentary
@@ -315,6 +315,9 @@ middle"
   (init 'defun)
   (db 'defun)
   (conn 'defun)
+  ;; datalog
+  (and-join 'defun)
+  (or-join 'defun)
   )
 
 (require 'paxedit)
