@@ -318,6 +318,7 @@ middle"
   ;; datalog
   (and-join 'defun)
   (or-join 'defun)
+  (not-join 'defun)
   )
 
 (require 'paxedit)
@@ -341,3 +342,4 @@ middle"
           (define-key paxedit-mode-map (kbd "C-@") 'paxedit-symbol-copy)
           (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
 
+(setq magit-last-seen-setup-instructions "1.4.0")
