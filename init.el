@@ -23,6 +23,7 @@
                       projectile
                       ack-and-a-half
                       ;; Misc.
+                      sass-mode
                       markdown-mode
                       color-theme-sanityinc-tomorrow
                       hlinum
@@ -343,3 +344,9 @@ middle"
           (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
 
 (setq magit-last-seen-setup-instructions "1.4.0")
+
+(global-set-key (kbd "C-c n")
+                (defun pnh-cleanup-buffer () (interactive)
+                       (delete-trailing-whitespace)
+                       (untabify (point-min) (point-max))
+                       (indent-region (point-min) (point-max))))

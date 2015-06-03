@@ -5,6 +5,9 @@
 
 (global-set-key (kbd "M-<f1>") (lambda () (interactive) (find-file "~/Cognician/Spren/dev/user.clj")))
 (global-set-key (kbd "M-<f2>") (lambda () (interactive) (find-file "~/Cognician/Hex/dev/dev.clj")))
+(global-set-key (kbd "M-<f3>") (lambda () (interactive) (find-file "~/Cognician/C2/project.clj")))
+(global-set-key (kbd "M-<f4>") (lambda () (interactive) (find-file "~/Cognician/Core/project.clj")))
+(global-set-key (kbd "M-<f5>") (lambda () (interactive) (find-file "~/Cognician/Resources/project.clj")))
 
 (global-set-key (kbd "<f5>") 'rgrep)
 
