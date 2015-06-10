@@ -41,3 +41,6 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 (setq show-paren-style 'expression)
+
+(global-set-key (kbd "C-.") 'hs-toggle-hiding)
+
