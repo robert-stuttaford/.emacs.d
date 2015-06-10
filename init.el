@@ -110,9 +110,10 @@
 (menu-bar-mode t)
 
 (add-hook 'clojure-mode-hook
- (lambda ()
-  (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1
-                                 font-lock-warning-face t)))))
+          (lambda ()
+            (hs-minor-mode)
+            (font-lock-add-keywords nil '(("\\<\\(FIXME\\|TODO\\|BUG\\)" 1
+                                           font-lock-warning-face t)))))
 
 ;; Add an extra newline to separate commit message from git commentary
 
