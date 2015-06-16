@@ -37,7 +37,8 @@
                       nrepl-eval-sexp-fu
                       paxedit
                       git-link
-                      expand-region)
+                      expand-region
+                      avy)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -351,3 +352,5 @@ middle"
                        (delete-trailing-whitespace)
                        (untabify (point-min) (point-max))
                        (indent-region (point-min) (point-max))))
+
+(global-set-key (kbd "M-p") 'avy-goto-char-2)

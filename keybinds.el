@@ -43,4 +43,6 @@
 (setq show-paren-style 'expression)
 
 (global-set-key (kbd "C-.") 'hs-toggle-hiding)
+(global-set-key (kbd "C-,") 'hs-hide-all)
+(global-set-key (kbd "C-x C-,") 'hs-show-all)
 
