@@ -7,7 +7,7 @@
 (setq projectile-show-paths-function 'projectile-hashify-with-relative-paths) ; Projectile shows full relative paths
 
 ;; Visual
-(set-default-font "Fantasque Sans Mono 14")                                        ; Font
+(set-default-font "Fantasque Sans Mono 18")                                        ; Font
 (load-theme 'sanityinc-tomorrow-night t)                                   ; Load my preferred theme, twilight
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)                        ; Enable rainbow delimiters when programming
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)                    ; Disable emacs-starter-kits line highlighting
