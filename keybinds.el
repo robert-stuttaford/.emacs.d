@@ -1,24 +1,11 @@
-(global-set-key [f1] (lambda () (interactive) (find-file "~/Cognician/Server/dev/user.clj")))
-(global-set-key [f2] (lambda () (interactive) (find-file "~/Cognician/Hex/dev/user.clj")))
-(global-set-key [f3] (lambda () (interactive) (find-file "~/Cognician/Highstorm/dev/user.clj")))
-(global-set-key [f4] (lambda () (interactive) (find-file "~/Cognician/C3/build.boot")))
-
-(global-set-key (kbd "M-<f1>") (lambda () (interactive) (find-file "~/Cognician/Spren/dev/user.clj")))
-(global-set-key (kbd "M-<f2>") (lambda () (interactive) (find-file "~/Cognician/Hex/dev/dev.clj")))
-(global-set-key (kbd "M-<f3>") (lambda () (interactive) (find-file "~/Cognician/C2/project.clj")))
-(global-set-key (kbd "M-<f4>") (lambda () (interactive) (find-file "~/Cognician/Core/project.clj")))
-(global-set-key (kbd "M-<f5>") (lambda () (interactive) (find-file "~/Cognician/Resources/project.clj")))
-(global-set-key (kbd "M-<f6>") (lambda () (interactive) (find-file "~/Cognician/shard/circle.yml")))
-
-(global-set-key (kbd "<f6>") 'highlight-regexp)
-(global-set-key (kbd "M-<f6>") 'unhighlight-regexp)
+(global-set-key [f6] 'highlight-regexp)
+(global-set-key [M-f6] 'unhighlight-regexp)
 
 (global-set-key [f8] 'cider-connect)
-(global-set-key (kbd "M-<f8>") 'cider-quit)
+(global-set-key [M-f8] 'cider-quit)
 
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
-(global-set-key (kbd "M-<f12>") (lambda () (interactive) (find-file "~/.emacs.d/keybinds.el")))
 
 (define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
 (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
@@ -39,8 +26,7 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(setq show-paren-style 'expression)
-
+;; hide/show
 (global-set-key (kbd "C-.") 'hs-toggle-hiding)
 (global-set-key (kbd "C-,") 'hs-hide-all)
 (global-set-key (kbd "C-x C-,") 'hs-show-all)
@@ -51,7 +37,7 @@
 (global-set-key (kbd "<M-s-up>") 'buf-move-up)
 (global-set-key (kbd "<M-s-down>") 'buf-move-down)
 
-;; Window movement
+;; Move active cursor to window
 (global-set-key [s-left] 'windmove-left)
 (global-set-key [s-right] 'windmove-right)
 (global-set-key [s-up] 'windmove-up)
@@ -90,17 +76,10 @@
 
 (global-set-key (kbd "C-M-g") 'git-link)
 
-(defun pnh-cleanup-buffer ()
-  (interactive)
-  (delete-trailing-whitespace)
-  (untabify (point-min) (point-max))
-  (indent-region (point-min) (point-max)))
-
-(global-set-key (kbd "C-c n") 'pnh-cleanup-buffer)
-
 (global-set-key (kbd "M-p") 'avy-goto-char-2)
 
 (require 'paxedit)
+
 (eval-after-load "paxedit"
   '(progn
      (define-key paxedit-mode-map (kbd "C-M-<right>") 'paxedit-transpose-forward)
@@ -117,14 +96,12 @@
      (define-key paxedit-mode-map (kbd "C-@") 'paxedit-symbol-copy)
      (define-key paxedit-mode-map (kbd "C-#") 'paxedit-symbol-kill)))
 
-
 (require 'align-cljlet)
 
 (global-set-key (kbd "s-i") 'align-cljlet)
 
 (global-set-key [M-tab] 'company-complete)
-(global-set-key (kbd "TAB") #'company-indent-or-complete-common)
-
+(global-set-key [tab] #'company-indent-or-complete-common)
 
 ;; Font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
