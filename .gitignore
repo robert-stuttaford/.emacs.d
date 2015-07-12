@@ -3,9 +3,5 @@ auto-save-list/
 backups/
 elpa/
 places
-projectile-bookmarks.eld
-ac-comphist.dat
-.mc-lists.el
-url/
 projectile.cache
 tramp

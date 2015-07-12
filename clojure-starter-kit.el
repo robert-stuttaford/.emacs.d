@@ -1,49 +1,45 @@
 ;; General
-(setq initial-scratch-message nil)                                         ; *scratch* starts empty
-(when (locate-library "clojure-mode")                                      ; Set *scratch* to Clojure mode
+(setq initial-scratch-message nil)
+(when (locate-library "clojure-mode")
   (setq initial-major-mode 'clojure-mode))
 
-(projectile-global-mode)                                                   ; Quickly navigate projects using Projectile (C-c p C-h for available commands)
-(setq projectile-show-paths-function 'projectile-hashify-with-relative-paths) ; Projectile shows full relative paths
+(projectile-global-mode)
+(setq projectile-show-paths-function 'projectile-hashify-with-relative-paths)
 
 ;; Visual
-(set-default-font "Fantasque Sans Mono 18")                                        ; Font
-(load-theme 'sanityinc-tomorrow-night t)                                   ; Load my preferred theme, twilight
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)                        ; Enable rainbow delimiters when programming
-(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)                    ; Disable emacs-starter-kits line highlighting
+(set-default-font "Input Mono Condensed 14")
+(load-theme 'sanityinc-tomorrow-night t)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 
-(global-linum-mode t)                                                      ; Always show line numbers on left
-(setq linum-format "%4d ")                                                 ; Line numbers gutter should be four characters wide
+(global-linum-mode t)
+(setq linum-format "%3d ")
 
-(line-number-mode 1)                                                       ; Mode line shows line numbers
-(column-number-mode 1)                                                     ; Mode line shows column numbers
+(setq-default tab-width 2)
+(fset 'yes-or-no-p 'y-or-n-p)
 
-(setq-default tab-width 2)                                                 ; Tab width of 2
-(fset 'yes-or-no-p 'y-or-n-p)                                              ; Emacs prompts should accept "y" or "n" instead of the full word
-
-(setq visible-bell nil)                                                    ; No more Mr. Visual Bell Guy.
-(setq ring-bell-function #'ignore)                                         ; No more annoying boop sound when scrolling on OSX.
+(setq visible-bell nil)
+(setq ring-bell-function #'ignore)
 
 (require 'powerline)
-(powerline-center-theme)                                                   ; enable centered powerline
+(powerline-center-theme)
 
 ;; Clojure
-(setq auto-mode-alist (cons '("\\.edn$" . clojure-mode) auto-mode-alist))  ; *.edn are Clojure files
-(setq auto-mode-alist (cons '("\\.cljs$" . clojure-mode) auto-mode-alist)) ; *.cljs are Clojure files
+(setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.hiccup$" . clojure-mode) auto-mode-alist))
 
-;; nREPL customizations
-(setq cider-popup-stacktraces nil)                                         ; Don't aggresively popup stacktraces
-(setq cider-popup-stacktraces-in-repl t)                                   ; Display stacktrace inline
+(add-hook 'cider-mode-hook #'eldoc-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
 
-(add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)          ; Enable eldoc - shows fn argument list in echo area
-(add-hook 'cider-repl-mode-hook 'paredit-mode)                             ; Use paredit in *cider* buffer
-(add-hook 'clojure-mode-hook 'paredit-mode)
+(add-to-list 'same-window-buffer-names "*cider")
 
-(add-to-list 'same-window-buffer-names "*cider")                          ; Make C-c C-z switch to *cider*
+(setq nrepl-buffer-name-show-port t)
+(setq cider-prompt-save-file-on-load nil)
 
+(require 'cider-eval-sexp-fu)
 
 ;; Ido-mode customizations
-(setq ido-decorations                                                      ; Make ido-mode display vertically
+(setq ido-decorations
       (quote
        ("\n-> "           ; Opening bracket around prospect list
         ""                ; Closing bracket around prospect list
@@ -57,7 +53,7 @@
         " [Too big]"      ; directory too big
         " [Confirm]")))   ; confirm creation of new file or buffer
 
-(add-hook 'ido-setup-hook                                                  ; Navigate ido-mode vertically
+(add-hook 'ido-setup-hook
           (lambda ()
             (define-key ido-completion-map [down] 'ido-next-match)
             (define-key ido-completion-map [up] 'ido-prev-match)
