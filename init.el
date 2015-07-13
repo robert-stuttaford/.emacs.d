@@ -44,14 +44,14 @@
     avy)
   "A list of packages to ensure are installed at launch.")
 
-(require 'magit)
-(defvar magit-diff-add 'magit-diff-added)
-(defvar magit-diff-del 'magit-diff-removed)
-
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(require 'magit)
+(defvar magit-diff-add 'magit-diff-added)
+(defvar magit-diff-del 'magit-diff-removed)
 
 ;; Load key bindings.
 (load (concat user-emacs-directory "keybinds.el"))
