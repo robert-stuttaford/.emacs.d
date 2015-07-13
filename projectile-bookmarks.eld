@@ -1,1 +1,1 @@
-("~/Cognician/Hex/" "~/.emacs.d/" "~/Cognician/Resources/" "~/Cognician/C3/" "~/Cognician/Highstorm/" "~/Cognician/shard/" "~/Cognician/Server/" "~/Cognician/Radiant/" "~/Cognician/octo/")
+("~/.emacs.d/" "~/Cognician/Hex/" "~/Cognician/Resources/" "~/Cognician/C3/" "~/Cognician/Highstorm/" "~/Cognician/shard/" "~/Cognician/Server/" "~/Cognician/Radiant/" "~/Cognician/octo/")

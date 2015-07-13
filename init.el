@@ -30,6 +30,7 @@
     projectile
     ack-and-a-half
     ;; Misc.
+    json-mode
     sass-mode
     markdown-mode
     color-theme-sanityinc-tomorrow
