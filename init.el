@@ -74,12 +74,17 @@
    (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
  '(auto-save-default nil)
  '(backup-inhibited t t)
+ '(blink-matching-paren nil)
  '(cider-buffer-name-show-port t)
+ '(cljr-favor-prefix-notation nil)
+ '(cljr-favor-private-functions nil)
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
  '(git-link-open-in-browser t t)
  '(magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient")
  '(nrepl-host "localhost")
+ '(show-paren-delay 0)
+ '(show-paren-mode t)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -227,8 +232,6 @@
 
 (setq visible-bell nil)
 (setq ring-bell-function #'ignore)
-
-(setq show-paren-style 'expression)
 
 (require 'powerline)
 (powerline-center-theme)

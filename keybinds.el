@@ -7,6 +7,8 @@
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
+(require 'projectile)
+
 (define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
 (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
 (define-key projectile-mode-map [?\s-f] 'projectile-find-file)
@@ -101,7 +103,6 @@
 (global-set-key (kbd "s-i") 'align-cljlet)
 
 (global-set-key [M-tab] 'company-complete)
-(global-set-key [tab] #'company-indent-or-complete-common)
 
 ;; Font size
 (define-key global-map (kbd "C-+") 'text-scale-increase)
