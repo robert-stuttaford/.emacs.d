@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/Cognician/Hex/" "~/Cognician/Resources/" "~/Cognician/C3/" "~/Cognician/Highstorm/" "~/Cognician/shard/" "~/Cognician/Server/" "~/Cognician/Radiant/" "~/Cognician/octo/")
+("~/.emacs.d/" "~/Cognician/Hex/" "~/Cognician/Highstorm/" "~/Cognician/Spren/" "~/Cognician/octo/" "~/Cognician/Server/" "~/Cognician/Resources/" "~/Cognician/Radiant/" "~/Cognician/Elf/" "~/Cognician/shard/" "~/Cognician/C3/" "~/Cognician/Cogbot/" "~/Cognician/zsh-plugin/")
