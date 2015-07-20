@@ -84,6 +84,7 @@
  '(git-link-open-in-browser t t)
  '(magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient")
  '(nrepl-host "localhost")
+ '(projectile-use-git-grep t)
  '(show-paren-delay 0)
  '(show-paren-mode t)
  '(vc-annotate-background nil)
