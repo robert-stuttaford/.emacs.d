@@ -45,21 +45,12 @@
 (global-set-key [s-up] 'windmove-up)
 (global-set-key [s-down] 'windmove-down)
 
-(defun cider-repl-hard-reset ()
-  (interactive)
+(defun cider-repl-reset (force)
+  (interactive "P")
   (save-some-buffers)
-  (find-project-file "dev/user.clj")
-  (cider-load-buffer)
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert "(user/reset)")
-    (cider-repl-return)))
-
-(global-set-key (kbd "C-c C-c r") 'cider-repl-hard-reset)
-
-(defun cider-repl-reset ()
-  (interactive)
-  (save-some-buffers)
+  (when force
+    (find-project-file "dev/user.clj")
+    (cider-load-buffer))
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
     (insert "(user/reset)")
