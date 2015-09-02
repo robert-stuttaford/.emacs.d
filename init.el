@@ -147,7 +147,9 @@
                               ("nr-web1" "9996")
                               ("nr-web2" "9997")
                               ("nr-hex" "7888")
-                              ("nr-bcc" "9991")))
+                              ("nr-hs" "7888")
+                              ("nr-bcc" "9991")
+                              ("nr-c2" "9991")))
 
 (defun cleanup-buffer ()
   (interactive)
