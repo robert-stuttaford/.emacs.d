@@ -219,7 +219,7 @@
 (setq projectile-show-paths-function 'projectile-hashify-with-relative-paths)
 
 ;; Visual
-(set-default-font "Input Mono Condensed 20")
+(set-default-font "Input Mono Condensed 16")
 (load-theme 'sanityinc-tomorrow-night t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
