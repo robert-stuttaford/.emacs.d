@@ -190,6 +190,7 @@
   (for-map 'defun)
   (letk 'defun)
   (fnk 'defun)
+  (memoized-fn 'defun)
   ;; compojure
   (context 'defun)
   ;;
@@ -204,6 +205,7 @@
   (and-join 'defun)
   (or-join 'defun)
   (not-join 'defun)
+  ;;
   )
 
 (font-lock-add-keywords
