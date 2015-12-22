@@ -252,6 +252,8 @@
 
 (require 'cider-eval-sexp-fu)
 
+(setq hs-hide-comments nil)
+
 ;; Ido-mode customizations
 (setq ido-decorations
       (quote
