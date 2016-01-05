@@ -249,6 +249,9 @@
 (setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.hiccup$" . clojure-mode) auto-mode-alist))
 
+(require 'clojure-mode)
+(setq clojure-align-forms-automatically t)
+
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
