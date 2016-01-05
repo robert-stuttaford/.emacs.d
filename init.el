@@ -205,6 +205,13 @@
   (and-join 'defun)
   (or-join 'defun)
   (not-join 'defun)
+  ;; om.next
+  (params 'defun)
+  (query 'defun)
+  (ident 'defun)
+  (componentWillReceiveProps 'defun)
+  (componentDidMount 'defun)
+  (componentWillUnmount 'defun)
   ;;
   )
 
