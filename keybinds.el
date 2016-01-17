@@ -72,7 +72,7 @@
   (interactive)
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
-    (insert "(pprint (sort (.split (System/getProperty \\\"java.class.path\\\") \\\":\\\")))")
+    (insert "(pprint (sort (.split (System/getProperty \"java.class.path\") \":\")))")
     (cider-repl-return)))
 
 (global-set-key (kbd "C-c P") 'cider-class-path)
