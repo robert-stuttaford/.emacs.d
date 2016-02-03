@@ -137,6 +137,8 @@
 (require 'cider)
 (setq cider-pprint-fn 'pprint)
 
+(setq redisplay-dont-pause t)
+
 (defun cleanup-buffer ()
   (interactive)
   (whitespace-cleanup)
@@ -252,7 +254,8 @@
 
 (require 'cider-eval-sexp-fu)
 
-(setq hs-hide-comments nil)
+(load-library "hideshow")
+(setq hs-hide-comments t)
 
 ;; Ido-mode customizations
 (setq ido-decorations
