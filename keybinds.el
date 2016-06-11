@@ -58,6 +58,8 @@
 
 (global-set-key (kbd "C-c r") 'cider-repl-reset)
 
+(global-unset-key (kbd "s-t"))
+
 (defun cider-repl-dev-reset ()
   (interactive)
   (save-some-buffers)

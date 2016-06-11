@@ -41,7 +41,8 @@
     highlight
     git-link
     expand-region
-    avy)
+    avy
+    floobits)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
