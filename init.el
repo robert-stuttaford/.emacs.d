@@ -76,6 +76,9 @@
  '(cider-buffer-name-show-port t)
  '(cljr-favor-prefix-notation nil)
  '(cljr-favor-private-functions nil)
+ '(custom-safe-themes
+   (quote
+    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
  '(git-link-open-in-browser t t)
@@ -222,7 +225,7 @@
 
 ;; Visual
 (set-default-font "Input Mono Condensed 16")
-(load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'tango-dark t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
 
