@@ -30,8 +30,6 @@
     projectile
     ack-and-a-half
     ;; Misc.
-    json-mode
-    sass-mode
     markdown-mode
     color-theme-sanityinc-tomorrow
     powerline
@@ -41,8 +39,7 @@
     highlight
     git-link
     expand-region
-    avy
-    floobits)
+    avy)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -170,18 +167,6 @@
   (flet ((process-list ())) ad-do-it))
 
 (define-clojure-indent
-  ;; om & om-tools indenting
-  (display-name 'defun)
-  (init-state 'defun)
-  (will-mount 'defun)
-  (did-mount 'defun)
-  (will-unmount 'defun)
-  (render 'defun)
-  (render-state 'defun)
-  (should-update 'defun)
-  (will-update 'defun)
-  (will-receive-props 'defun)
-  (did-update 'defun)
   ;; prismatic plumbing
   (for-map 'defun)
   (letk 'defun)
@@ -189,8 +174,6 @@
   (memoized-fn 'defun)
   ;; compojure
   (context 'defun)
-  ;;
-  (let-programs 'defun)
   ;; component
   (start 'defun)
   (stop 'defun)
@@ -200,16 +183,7 @@
   ;; datalog
   (and-join 'defun)
   (or-join 'defun)
-  (not-join 'defun)
-  ;; om.next
-  (params 'defun)
-  (query 'defun)
-  (ident 'defun)
-  (componentWillReceiveProps 'defun)
-  (componentDidMount 'defun)
-  (componentWillUnmount 'defun)
-  ;;
-  )
+  (not-join 'defun))
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
@@ -224,7 +198,6 @@
 (setq projectile-show-paths-function 'projectile-hashify-with-relative-paths)
 
 ;; Visual
-(set-default-font "Input Mono Condensed 16")
 (load-theme 'tango-dark t)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (remove-hook 'prog-mode-hook 'esk-turn-on-hl-line-mode)
@@ -242,7 +215,6 @@
 (powerline-center-theme)
 
 ;; Clojure
-(setq auto-mode-alist (cons '("\\.boot$" . clojure-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.hiccup$" . clojure-mode) auto-mode-alist))
 
 (require 'clojure-mode)
@@ -314,5 +286,6 @@
   (dolist (char-regexp alist)
     (set-char-table-range composition-function-table (car char-regexp)
                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
+
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
