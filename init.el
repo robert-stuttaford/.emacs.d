@@ -232,7 +232,7 @@
 
 (load-library "hideshow")
 (setq hs-hide-comments t)
-
+(set-default-font "Input Mono Condensed 16")
 ;; Ido-mode customizations
 (setq ido-decorations
       (quote
@@ -289,3 +289,5 @@
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
+
+(setq mouse-wheel-progressive-speed nil)
