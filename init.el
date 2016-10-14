@@ -183,7 +183,9 @@
   ;; datalog
   (and-join 'defun)
   (or-join 'defun)
-  (not-join 'defun))
+  (not-join 'defun)
+  (did-update 'defun)
+  (render-state 'defun))
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
