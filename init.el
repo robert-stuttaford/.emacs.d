@@ -81,6 +81,9 @@
  '(git-link-open-in-browser t t)
  '(magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient")
  '(nrepl-host "localhost")
+ '(package-selected-packages
+   (quote
+    (avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(show-paren-delay 0)
  '(show-paren-mode t)
