@@ -188,7 +188,10 @@
   (or-join 'defun)
   (not-join 'defun)
   (did-update 'defun)
-  (render-state 'defun))
+  (render-state 'defun)
+  ;; midje
+  (fact 'defun)
+  )
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
