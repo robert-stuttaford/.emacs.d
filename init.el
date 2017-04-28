@@ -29,6 +29,7 @@
     ;; Project navigation
     projectile
     ack-and-a-half
+    ag
     ;; Misc.
     markdown-mode
     color-theme-sanityinc-tomorrow
@@ -83,8 +84,15 @@
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
+ '(safe-local-variable-values
+   (quote
+    ((cider-cljs-lein-repl . "(do (dev) (go) (cljs-repl))")
+     (cider-refresh-after-fn . "reloaded.repl/resume")
+     (cider-refresh-before-fn . "reloaded.repl/suspend")
+     (whitespace-line-column . 80)
+     (lexical-binding . t))))
  '(show-paren-delay 0)
  '(show-paren-mode t)
  '(vc-annotate-background nil)
@@ -143,20 +151,33 @@
 
 (setq redisplay-dont-pause t)
 
-(defun cleanup-buffer ()
+(auto-save-mode t)
+
+;; Save when out of focus
+(defun save-all ()
   (interactive)
-  (whitespace-cleanup)
-  (untabify (point-min) (point-max))
-  (indent-region (point-min) (point-max)))
+  (save-some-buffers t))
+
+(add-hook 'focus-out-hook 'save-all)
+
+(defvar cleanup-buffer t)
+
+(defun toggle-fmt-on-clean ()
+  (interactive)
+  (if cleanup-buffer
+      (setq cleanup-buffer nil)
+    (setq cleanup-buffer t)))
+
+(defun cleanup-buffer ()
+  (when cleanup-buffer
+    (interactive)
+    (whitespace-cleanup)
+    (untabify (point-min) (point-max))
+    (indent-region (point-min) (point-max))))
 
 (add-hook 'before-save-hook 'cleanup-buffer)
 
 (eval-when-compile (require 'cl-lib))
-
-(add-hook 'focus-out-hook
-          (lambda ()
-            (cl-letf (((symbol-function 'message) #'format))
-              (save-some-buffers t))))
 
 ;;; Turn on expression highlighting
 
@@ -191,6 +212,13 @@
   (render-state 'defun)
   ;; midje
   (fact 'defun)
+  ;; om
+  (render 'defun)
+  (render-state 'defun)
+  ;; om.next
+  (initial-state 'defun)
+  (ident 'defun)
+  (query 'defun)
   )
 
 (font-lock-add-keywords
@@ -299,3 +327,24 @@
 (put 'downcase-region 'disabled nil)
 
 (setq mouse-wheel-progressive-speed nil)
+
+(defun hs-clojure-hide-namespace-and-folds ()
+  "Hide the first (ns ...) expression in the file, and also all
+the (^:fold ...) expressions."
+  (interactive)
+  (hs-life-goes-on
+   (save-excursion
+     (goto-char (point-min))
+     (when (ignore-errors (re-search-forward "^(ns "))
+       (hs-hide-block))
+
+     (while (ignore-errors (re-search-forward "\\^:fold"))
+       (hs-hide-block)
+       (next-line)))))
+
+(defun hs-clojure-mode-hook ()
+  (interactive)
+  (hs-minor-mode 1)
+  (hs-clojure-hide-namespace-and-folds))
+
+(add-hook 'clojure-mode-hook 'hs-clojure-mode-hook)
