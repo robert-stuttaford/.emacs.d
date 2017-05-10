@@ -15,7 +15,6 @@
     starter-kit-lisp
     ;; Clojure & friends
     clojure-mode
-    clojure-snippets
     cider
     align-cljlet
     clj-refactor
@@ -27,6 +26,7 @@
     company
     popup
     ;; Project navigation
+    flx-ido
     projectile
     ack-and-a-half
     ag
@@ -34,7 +34,6 @@
     markdown-mode
     color-theme-sanityinc-tomorrow
     powerline
-    yasnippet
     buffer-move
     color-identifiers-mode
     highlight
@@ -84,7 +83,7 @@
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
