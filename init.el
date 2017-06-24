@@ -19,6 +19,7 @@
     align-cljlet
     clj-refactor
     cider-eval-sexp-fu
+    html-to-hiccup
     ;; Lisps
     rainbow-delimiters
     paxedit
@@ -78,7 +79,7 @@
     ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
- '(git-link-open-in-browser t t)
+ '(git-link-open-in-browser t)
  '(magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient")
  '(nrepl-host "localhost")
  '(package-selected-packages
@@ -218,6 +219,8 @@
   (initial-state 'defun)
   (ident 'defun)
   (query 'defun)
+  ;; tufte
+  (tufte/p 'defun)
   )
 
 (font-lock-add-keywords
