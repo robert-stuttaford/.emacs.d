@@ -11,5 +11,6 @@
       '(
         cljr-destructure-keys
         cljr-slash
+        mark-sexp
         paredit-forward-slurp-sexp
         ))
