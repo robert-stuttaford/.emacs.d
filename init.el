@@ -29,8 +29,6 @@
     ;; Project navigation
     flx-ido
     projectile
-    ack-and-a-half
-    ag
     ;; Misc.
     markdown-mode
     color-theme-sanityinc-tomorrow
@@ -82,7 +80,6 @@
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
  '(git-link-open-in-browser t)
- '(magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient")
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
@@ -123,8 +120,6 @@
 (split-window-right)
 
 (menu-bar-mode t)
-
-(yas-global-mode 1)
 
 (global-company-mode)
 (global-color-identifiers-mode)
