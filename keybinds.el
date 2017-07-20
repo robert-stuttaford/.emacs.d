@@ -51,7 +51,8 @@
   (save-some-buffers)
   (when force
     (find-project-file "dev/user.clj")
-    (cider-load-buffer))
+    (cider-load-buffer)
+    (cider-repl-set-ns "user"))
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
     (insert "(user/reset)")
