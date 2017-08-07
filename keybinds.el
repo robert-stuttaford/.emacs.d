@@ -13,6 +13,7 @@
 (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)
 (define-key projectile-mode-map [?\s-f] 'projectile-find-file)
 (define-key projectile-mode-map [?\s-g] 'projectile-grep)
+(define-key projectile-mode-map [?\s-G] 'projectile-replace-regexp)
 
 (defun find-project-file (file)
   (find-file (expand-file-name file (projectile-project-root))))
@@ -50,7 +51,8 @@
   (save-some-buffers)
   (when force
     (find-project-file "dev/user.clj")
-    (cider-load-buffer))
+    (cider-load-buffer)
+    (cider-repl-set-ns "user"))
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
     (insert "(user/reset)")

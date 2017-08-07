@@ -10,5 +10,7 @@
 (setq mc/cmds-to-run-once
       '(
         cljr-destructure-keys
+        cljr-slash
+        mark-sexp
         paredit-forward-slurp-sexp
         ))

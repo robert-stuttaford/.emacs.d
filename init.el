@@ -19,6 +19,7 @@
     align-cljlet
     clj-refactor
     cider-eval-sexp-fu
+    html-to-hiccup
     ;; Lisps
     rainbow-delimiters
     paxedit
@@ -28,8 +29,6 @@
     ;; Project navigation
     flx-ido
     projectile
-    ack-and-a-half
-    ag
     ;; Misc.
     markdown-mode
     color-theme-sanityinc-tomorrow
@@ -50,6 +49,8 @@
 ;; Load key bindings.
 (load (concat user-emacs-directory "keybinds.el"))
 
+(setq cider-font-lock-reader-conditionals nil)
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -69,21 +70,22 @@
    (vector "#cccccc" "#f2777a" "#99cc99" "#ffcc66" "#6699cc" "#cc99cc" "#66cccc" "#2d2d2d"))
  '(auto-save-default nil)
  '(backup-inhibited t t)
+ '(blink-cursor-mode nil)
  '(blink-matching-paren nil)
  '(cider-buffer-name-show-port t)
  '(cljr-favor-prefix-notation nil)
  '(cljr-favor-private-functions nil)
+ '(column-number-mode t)
  '(custom-safe-themes
    (quote
     ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
- '(git-link-open-in-browser t t)
- '(magit-emacsclient-executable "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient")
+ '(git-link-open-in-browser t)
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (clojure-cheatsheet exec-path-from-shell html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
@@ -94,6 +96,7 @@
      (lexical-binding . t))))
  '(show-paren-delay 0)
  '(show-paren-mode t)
+ '(tool-bar-mode nil)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -120,8 +123,6 @@
 (split-window-right)
 
 (menu-bar-mode t)
-
-(yas-global-mode 1)
 
 (global-company-mode)
 (global-color-identifiers-mode)
@@ -218,7 +219,9 @@
   (initial-state 'defun)
   (ident 'defun)
   (query 'defun)
-  )
+  ;; tufte
+  (tufte/p 'defun))
+
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
@@ -267,7 +270,7 @@
 
 (load-library "hideshow")
 (setq hs-hide-comments t)
-(set-default-font "Input Mono Condensed 16")
+(set-default-font "Input Mono Condensed 12")
 ;; Ido-mode customizations
 (setq ido-decorations
       (quote
@@ -315,9 +318,9 @@
                (119 . ".\\(?:ww\\)")
                (123 . ".\\(?:-\\)")
                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-               )
-             ))
+               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)"))))
+
+
   (dolist (char-regexp alist)
     (set-char-table-range composition-function-table (car char-regexp)
                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
@@ -347,3 +350,6 @@ the (^:fold ...) expressions."
   (hs-clojure-hide-namespace-and-folds))
 
 (add-hook 'clojure-mode-hook 'hs-clojure-mode-hook)
+
+(setq exec-path (append exec-path '("/usr/local/bin")))
+(desktop-save-mode 1)
