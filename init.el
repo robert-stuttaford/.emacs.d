@@ -38,7 +38,8 @@
     highlight
     git-link
     expand-region
-    avy)
+    avy
+    flycheck-joker)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -48,6 +49,8 @@
 
 ;; Load key bindings.
 (load (concat user-emacs-directory "keybinds.el"))
+
+(require 'flycheck-joker)
 
 (setq cider-font-lock-reader-conditionals nil)
 
@@ -87,7 +90,9 @@
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
-    ((cider-cljs-lein-repl . "(do (dev) (go) (cljs-repl))")
+    ((cider-refresh-after-fn . "integrant.repl/resume")
+     (cider-refresh-before-fn . "integrant.repl/suspend")
+     (cider-cljs-lein-repl . "(do (dev) (go) (cljs-repl))")
      (cider-refresh-after-fn . "reloaded.repl/resume")
      (cider-refresh-before-fn . "reloaded.repl/suspend")
      (whitespace-line-column . 80)
@@ -116,6 +121,15 @@
      (340 . "#ffcc66")
      (360 . "#99cc99"))))
  '(vc-annotate-very-old-color nil))
+
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-enable-flex-matching t)
+(setq ido-use-faces nil)
+
 
 (split-window-right)
 
@@ -173,6 +187,7 @@
     (indent-region (point-min) (point-max))))
 
 (add-hook 'before-save-hook 'cleanup-buffer)
+;;(remove-hook 'before-save-hook 'cleanup-buffer)
 
 (eval-when-compile (require 'cl-lib))
 

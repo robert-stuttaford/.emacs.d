@@ -5,12 +5,14 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-        ))
+				))
 
 (setq mc/cmds-to-run-once
       '(
-        cljr-destructure-keys
-        cljr-slash
-        mark-sexp
-        paredit-forward-slurp-sexp
-        ))
+				cljr-destructure-keys
+				cljr-slash
+				mark-sexp
+				paredit-backward
+				paredit-forward-slurp-sexp
+				paredit-open-square
+				))
