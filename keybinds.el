@@ -138,8 +138,7 @@ middle"
      (t "mid"))))
 
 (defun win-resize-left-or-right ()
-  "Figure out if the current window is to the left, right or in the
-middle"
+  "Figure out if the current window is to the left, right or in the middle"
   (let* ((win-edges (window-edges))
          (this-window-x-min (nth 0 win-edges))
          (this-window-x-max (nth 2 win-edges))
@@ -183,3 +182,9 @@ middle"
 (global-set-key [s-S-right] 'win-resize-minimize-horiz)
 (global-set-key [s-S-up] 'win-resize-enlarge-vert)
 (global-set-key [s-S-down] 'win-resize-minimize-vert)
+
+;; helm
+
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x b") #'helm-buffers-list)
+

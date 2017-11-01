@@ -39,7 +39,10 @@
     git-link
     expand-region
     avy
-    flycheck-joker)
+    flycheck-joker
+    helm
+    helm-projectile
+    helm-cider)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
@@ -51,6 +54,7 @@
 (load (concat user-emacs-directory "keybinds.el"))
 
 (require 'flycheck-joker)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq cider-font-lock-reader-conditionals nil)
 
@@ -362,3 +366,9 @@ the (^:fold ...) expressions."
   (hs-clojure-hide-namespace-and-folds))
 
 (add-hook 'clojure-mode-hook 'hs-clojure-mode-hook)
+
+;;Helm key settings
+(helm-mode 1)
+(helm-cider-mode 1)
+(require 'helm-projectile)
+(helm-projectile-on)
