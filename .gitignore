@@ -5,3 +5,4 @@ elpa/
 places
 projectile.cache
 tramp
+flycheck_init.el

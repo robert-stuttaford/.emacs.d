@@ -188,10 +188,10 @@
     (interactive)
     (whitespace-cleanup)
     (untabify (point-min) (point-max))
-    (indent-region (point-min) (point-max))))
+    ;;(indent-region (point-min) (point-max))
+    ))
 
 (add-hook 'before-save-hook 'cleanup-buffer)
-;;(remove-hook 'before-save-hook 'cleanup-buffer)
 
 (eval-when-compile (require 'cl-lib))
 

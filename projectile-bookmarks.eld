@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/Cognician/Monolith/" "~/Cognician/Base/" "~/Cognician/Reactions/" "~/Code/snake/" "~/Cognician/Tock/" "~/Cognician/Semaphore/" "~/Cognician/Highstorm/" "~/Cognician/Chat/" "~/Cognician/Insights/" "~/Cognician/datomic-doc/")
+("~/.emacs.d/" "~/Cognician/Monolith/" "~/Cognician/Chat/" "~/Cognician/Tock/" "~/Cognician/Semaphore/" "~/Cognician/Reactions/" "~/Cognician/Compendium/" "~/Cognician/Terra/" "~/Cognician/Base/" "~/Code/snake/" "~/Cognician/Highstorm/" "~/Cognician/Insights/" "~/Cognician/datomic-doc/")
