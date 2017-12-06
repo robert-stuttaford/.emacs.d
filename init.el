@@ -207,13 +207,10 @@
   (flet ((process-list ())) ad-do-it))
 
 (define-clojure-indent
-  ;; prismatic plumbing
-  (for-map 'defun)
-  (letk 'defun)
-  (fnk 'defun)
-  (memoized-fn 'defun)
   ;; compojure
   (context 'defun)
+  (GET 'defun)
+    (POST 'defun)
   ;; component
   (start 'defun)
   (stop 'defun)
@@ -224,17 +221,6 @@
   (and-join 'defun)
   (or-join 'defun)
   (not-join 'defun)
-  (did-update 'defun)
-  (render-state 'defun)
-  ;; midje
-  (fact 'defun)
-  ;; om
-  (render 'defun)
-  (render-state 'defun)
-  ;; om.next
-  (initial-state 'defun)
-  (ident 'defun)
-  (query 'defun)
   ;; tufte
   (tufte/p 'defun)
   )
