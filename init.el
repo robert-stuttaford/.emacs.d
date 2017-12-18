@@ -47,8 +47,8 @@
 
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
+        (when (not (package-installed-p p))
+          (package-install p)))
 
 ;; Load key bindings.
 (load (concat user-emacs-directory "keybinds.el"))
@@ -134,7 +134,6 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
-
 (split-window-right)
 
 (menu-bar-mode t)
@@ -147,9 +146,9 @@
 
 (add-hook 'clojure-mode-hook
           (lambda ()
-            (clj-refactor-mode 1)
-            (paxedit-mode)
-            (cljr-add-keybindings-with-prefix "s-r")))
+                  (clj-refactor-mode 1)
+                  (paxedit-mode)
+                  (cljr-add-keybindings-with-prefix "s-r")))
 
 ;; Add an extra newline to separate commit message from git commentary
 
@@ -180,7 +179,7 @@
 (defun toggle-fmt-on-clean ()
   (interactive)
   (if cleanup-buffer
-      (setq cleanup-buffer nil)
+    (setq cleanup-buffer nil)
     (setq cleanup-buffer t)))
 
 (defun cleanup-buffer ()
@@ -189,7 +188,8 @@
     (whitespace-cleanup)
     (untabify (point-min) (point-max))
     ;;(indent-region (point-min) (point-max))
-    ))
+    ;;(cider-format-buffer)
+))
 
 (add-hook 'before-save-hook 'cleanup-buffer)
 
@@ -210,7 +210,7 @@
   ;; compojure
   (context 'defun)
   (GET 'defun)
-    (POST 'defun)
+  (POST 'defun)
   ;; component
   (start 'defun)
   (stop 'defun)
@@ -222,8 +222,7 @@
   (or-join 'defun)
   (not-join 'defun)
   ;; tufte
-  (tufte/p 'defun)
-  )
+  (tufte/p 'defun))
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
@@ -290,10 +289,10 @@
 
 (add-hook 'ido-setup-hook
           (lambda ()
-            (define-key ido-completion-map [down] 'ido-next-match)
-            (define-key ido-completion-map [up] 'ido-prev-match)
-            (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
-            (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
+                  (define-key ido-completion-map [down] 'ido-next-match)
+                  (define-key ido-completion-map [up] 'ido-prev-match)
+                  (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+                  (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
 (when (window-system)
   (set-default-font "Fira Code"))
@@ -320,12 +319,10 @@
                (119 . ".\\(?:ww\\)")
                (123 . ".\\(?:-\\)")
                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-               )
-             ))
+               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)"))))
   (dolist (char-regexp alist)
-    (set-char-table-range composition-function-table (car char-regexp)
-                          `([,(cdr char-regexp) 0 font-shape-gstring]))))
+          (set-char-table-range composition-function-table (car char-regexp)
+                                `([(cdr char-regexp) 0 font-shape-gstring]))))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -338,13 +335,13 @@ the (^:fold ...) expressions."
   (interactive)
   (hs-life-goes-on
    (save-excursion
-     (goto-char (point-min))
-     (when (ignore-errors (re-search-forward "^(ns "))
-       (hs-hide-block))
+    (goto-char (point-min))
+    (when (ignore-errors (re-search-forward "^(ns "))
+      (hs-hide-block))
 
-     (while (ignore-errors (re-search-forward "\\^:fold"))
-       (hs-hide-block)
-       (next-line)))))
+    (while (ignore-errors (re-search-forward "\\^:fold"))
+      (hs-hide-block)
+      (next-line)))))
 
 (defun hs-clojure-mode-hook ()
   (interactive)

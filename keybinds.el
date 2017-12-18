@@ -1,3 +1,5 @@
+(global-set-key [f4] 'magit-status)
+
 (global-set-key [f6] 'highlight-regexp)
 (global-set-key [M-f6] 'unhighlight-regexp)
 
@@ -76,7 +78,7 @@
   (interactive)
   (with-current-buffer (cider-current-repl-buffer)
     (goto-char (point-max))
-    (insert "(pprint (sort (.split (System/getProperty \"java.class.path\") \":\")))")
+    (insert "(clojure.pprint/pprint (sort (.split (System/getProperty \"java.class.path\") \":\")))")
     (cider-repl-return)))
 
 (global-set-key (kbd "C-c P") 'cider-class-path)
