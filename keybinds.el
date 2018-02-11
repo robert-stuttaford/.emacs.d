@@ -6,6 +6,8 @@
 (global-set-key [f8] 'cider-connect)
 (global-set-key [M-f8] 'cider-quit)
 
+(global-set-key [M-f1] 'cider-repl-clear-buffer)
+
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
@@ -63,16 +65,6 @@
 (global-set-key (kbd "C-c r") 'cider-repl-reset)
 
 (global-unset-key (kbd "s-t"))
-
-(defun cider-repl-dev-reset ()
-  (interactive)
-  (save-some-buffers)
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert "(user/dev-reset)")
-    (cider-repl-return)))
-
-(global-set-key (kbd "C-c R") 'cider-repl-dev-reset)
 
 (defun cider-class-path ()
   (interactive)

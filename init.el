@@ -272,7 +272,7 @@
 
 (load-library "hideshow")
 (setq hs-hide-comments t)
-(set-default-font "Input Mono Condensed 16")
+(set-default-font "Fira Code 16")
 ;; Ido-mode customizations
 (setq ido-decorations
       (quote
@@ -295,8 +295,10 @@
                   (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
                   (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
+;;; Fira code
+
 (when (window-system)
-  (set-default-font "Fira Code"))
+  (set-frame-font "Fira Code"))
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                (36 . ".\\(?:>\\)")
@@ -305,7 +307,7 @@
                (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
                (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
-               ;;(46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
+               (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
                (48 . ".\\(?:x[a-zA-Z]\\)")
                (58 . ".\\(?:::\\|[:=]\\)")
@@ -320,10 +322,12 @@
                (119 . ".\\(?:ww\\)")
                (123 . ".\\(?:-\\)")
                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)"))))
+               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
+               )
+             ))
   (dolist (char-regexp alist)
-          (set-char-table-range composition-function-table (car char-regexp)
-                                `([(cdr char-regexp) 0 font-shape-gstring]))))
+    (set-char-table-range composition-function-table (car char-regexp)
+                          `([,(cdr char-regexp) 0 font-shape-gstring]))))
 
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
@@ -356,3 +360,4 @@ the (^:fold ...) expressions."
 (helm-cider-mode 1)
 (require 'helm-projectile)
 (helm-projectile-on)
+
