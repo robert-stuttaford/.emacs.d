@@ -37,8 +37,6 @@
     color-identifiers-mode
     highlight
     git-link
-    expand-region
-    avy
     flycheck-joker
     helm
     helm-projectile
@@ -58,6 +56,7 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq cider-font-lock-reader-conditionals nil)
+(setq cider-test-show-report-on-success t)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -164,8 +163,6 @@
 (require 'cider)
 (setq cider-pprint-fn 'pprint)
 
-(setq redisplay-dont-pause t)
-
 (auto-save-mode t)
 
 ;; Save when out of focus
@@ -184,8 +181,8 @@
     (setq cleanup-buffer t)))
 
 (defun cleanup-buffer ()
+  (interactive)
   (when cleanup-buffer
-    (interactive)
     (whitespace-cleanup)
     (untabify (point-min) (point-max))
     ;;(indent-region (point-min) (point-max))
@@ -266,7 +263,7 @@
 (add-to-list 'same-window-buffer-names "*cider")
 
 (setq nrepl-buffer-name-show-port t)
-(setq cider-prompt-save-file-on-load nil)
+(setq cider-save-file-on-load nil)
 
 (require 'cider-eval-sexp-fu)
 
@@ -335,8 +332,7 @@
 (setq mouse-wheel-progressive-speed nil)
 
 (defun hs-clojure-hide-namespace-and-folds ()
-  "Hide the first (ns ...) expression in the file, and also all
-the (^:fold ...) expressions."
+  "Hide the first (ns ...) expression in the file, and also all the (^:fold ...) expressions."
   (interactive)
   (hs-life-goes-on
    (save-excursion
@@ -346,7 +342,7 @@ the (^:fold ...) expressions."
 
     (while (ignore-errors (re-search-forward "\\^:fold"))
       (hs-hide-block)
-      (next-line)))))
+      (forward-line)))))
 
 (defun hs-clojure-mode-hook ()
   (interactive)
