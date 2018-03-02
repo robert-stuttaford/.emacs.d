@@ -56,7 +56,8 @@
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (setq cider-font-lock-reader-conditionals nil)
-(setq cider-test-show-report-on-success t)
+(setq cider-test-show-report-on-success nil)
+(setq cider-repl-use-pretty-printing t)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
