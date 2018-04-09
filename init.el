@@ -58,6 +58,7 @@
 (setq cider-font-lock-reader-conditionals nil)
 (setq cider-test-show-report-on-success nil)
 (setq cider-repl-use-pretty-printing t)
+(setq cider-repl-display-help-banner nil)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -221,7 +222,12 @@
   (or-join 'defun)
   (not-join 'defun)
   ;; tufte
-  (tufte/p 'defun))
+  (tufte/p 'defun)
+  ;;re-frame
+  (rf/reg-event-db 'defun)
+  (rf/reg-event-fx 'defun)
+  (rf/reg-sub 'defun)
+  (rf/reg-fx 'defun))
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"
