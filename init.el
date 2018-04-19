@@ -302,7 +302,7 @@
             (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
 ;;; Fira code
-(set-frame-font "Fira Code")
+(set-frame-font "Fira Code 16")
 
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
