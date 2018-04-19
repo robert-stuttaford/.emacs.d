@@ -44,10 +44,12 @@
     helm-swoop)
   "A list of packages to ensure are installed at launch.")
 
+(setq cider-repl-print-length nil)
+
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
-        (when (not (package-installed-p p))
-          (package-install p)))
+  (when (not (package-installed-p p))
+    (package-install p)))
 
 ;; Load key bindings.
 (load (concat user-emacs-directory "keybinds.el"))
@@ -148,9 +150,9 @@
 
 (add-hook 'clojure-mode-hook
           (lambda ()
-                  (clj-refactor-mode 1)
-                  (paxedit-mode)
-                  (cljr-add-keybindings-with-prefix "s-r")))
+            (clj-refactor-mode 1)
+            (paxedit-mode)
+            (cljr-add-keybindings-with-prefix "s-r")))
 
 ;; Add an extra newline to separate commit message from git commentary
 
@@ -179,7 +181,7 @@
 (defun toggle-fmt-on-clean ()
   (interactive)
   (if cleanup-buffer
-    (setq cleanup-buffer nil)
+      (setq cleanup-buffer nil)
     (setq cleanup-buffer t)))
 
 (defun cleanup-buffer ()
@@ -189,7 +191,7 @@
     (untabify (point-min) (point-max))
     ;;(indent-region (point-min) (point-max))
     ;;(cider-format-buffer)
-))
+    ))
 
 (add-hook 'before-save-hook 'cleanup-buffer)
 
@@ -260,6 +262,7 @@
 
 ;; Clojure
 (setq auto-mode-alist (cons '("\\.hiccup$" . clojure-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.joker$" . clojure-mode) auto-mode-alist))
 
 (require 'clojure-mode)
 (setq clojure-align-forms-automatically t)
@@ -276,7 +279,6 @@
 
 (load-library "hideshow")
 (setq hs-hide-comments t)
-(set-default-font "Fira Code 16")
 ;; Ido-mode customizations
 (setq ido-decorations
       (quote
@@ -294,15 +296,14 @@
 
 (add-hook 'ido-setup-hook
           (lambda ()
-                  (define-key ido-completion-map [down] 'ido-next-match)
-                  (define-key ido-completion-map [up] 'ido-prev-match)
-                  (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
-                  (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
+            (define-key ido-completion-map [down] 'ido-next-match)
+            (define-key ido-completion-map [up] 'ido-prev-match)
+            (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
+            (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
 ;;; Fira code
+(set-frame-font "Fira Code")
 
-(when (window-system)
-  (set-frame-font "Fira Code"))
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
                (36 . ".\\(?:>\\)")
@@ -326,9 +327,7 @@
                (119 . ".\\(?:ww\\)")
                (123 . ".\\(?:-\\)")
                (124 . ".\\(?:\\(?:|[=|]\\)\\|[=>|]\\)")
-               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)")
-               )
-             ))
+               (126 . ".\\(?:~>\\|~~\\|[>=@~-]\\)"))))
   (dolist (char-regexp alist)
     (set-char-table-range composition-function-table (car char-regexp)
                           `([,(cdr char-regexp) 0 font-shape-gstring]))))
@@ -343,13 +342,13 @@
   (interactive)
   (hs-life-goes-on
    (save-excursion
-    (goto-char (point-min))
-    (when (ignore-errors (re-search-forward "^(ns "))
-      (hs-hide-block))
+     (goto-char (point-min))
+     (when (ignore-errors (re-search-forward "^(ns "))
+       (hs-hide-block))
 
-    (while (ignore-errors (re-search-forward "\\^:fold"))
-      (hs-hide-block)
-      (forward-line)))))
+     (while (ignore-errors (re-search-forward "\\^:fold"))
+       (hs-hide-block)
+       (forward-line)))))
 
 (defun hs-clojure-mode-hook ()
   (interactive)
@@ -363,4 +362,3 @@
 (helm-cider-mode 1)
 (require 'helm-projectile)
 (helm-projectile-on)
-

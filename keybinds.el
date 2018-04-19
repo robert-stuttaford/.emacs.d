@@ -37,6 +37,8 @@
 (global-set-key (kbd "C-,") 'hs-hide-all)
 (global-set-key (kbd "C-x C-,") 'hs-show-all)
 
+(global-set-key (kbd "M-w") 'helm-swoop)
+
 ;; Swap current buffer with buffer in direction of arrow
 (global-set-key (kbd "<M-s-right>") 'buf-move-right)
 (global-set-key (kbd "<M-s-left>") 'buf-move-left)
