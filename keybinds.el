@@ -6,6 +6,10 @@
 (global-set-key [f8] 'cider-connect)
 (global-set-key [M-f8] 'cider-quit)
 
+(global-set-key [C-M-f8]
+                (lambda () (interactive)
+                  (cider-connect "localhost" 7888)))
+
 (global-set-key [M-f1] 'cider-repl-clear-buffer)
 
 (global-set-key (kbd "s-T") 'cider-test-run-test)
