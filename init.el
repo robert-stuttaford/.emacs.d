@@ -98,7 +98,9 @@
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
-    ((cider-refresh-after-fn . "cognician.manage.dev-server/start-service!")
+    ((cider-refresh-after-fn . "cognician.variables.dev-server/start-service!")
+     (cider-refresh-before-fn . "cognician.variables.dev-server/stop-service!")
+     (cider-refresh-after-fn . "cognician.manage.dev-server/start-service!")
      (cider-refresh-before-fn . "cognician.manage.dev-server/stop-service!")
      (cider-refresh-after-fn . "user/start-service!")
      (cider-refresh-before-fn . "user/stop-service!")
@@ -369,3 +371,5 @@
 (helm-cider-mode 1)
 (require 'helm-projectile)
 (helm-projectile-on)
+
+;;; init.el ends here
