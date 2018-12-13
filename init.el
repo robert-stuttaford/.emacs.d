@@ -10,10 +10,7 @@
 
 ;; Add in your own as you wish:
 (defvar my-packages
-  '(starter-kit
-    starter-kit-bindings
-    starter-kit-lisp
-    ;; Clojure & friends
+  '(;; Clojure & friends
     clojure-mode
     cider
     align-cljlet
@@ -46,6 +43,9 @@
 
 (setq cider-repl-print-length nil)
 
+(setq whitespace-style '(trailing lines space-before-tab
+                                  face indentation space-after-tab))
+
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -62,6 +62,9 @@
 (setq cider-test-show-report-on-success nil)
 (setq cider-repl-use-pretty-printing t)
 (setq cider-repl-display-help-banner nil)
+
+(tool-bar-mode -1)
+(toggle-scroll-bar -1)
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
