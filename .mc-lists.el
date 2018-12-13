@@ -5,14 +5,17 @@
 
 (setq mc/cmds-to-run-for-all
       '(
-				))
+        ))
 
 (setq mc/cmds-to-run-once
       '(
-				cljr-destructure-keys
-				cljr-slash
-				mark-sexp
-				paredit-backward
-				paredit-forward-slurp-sexp
-				paredit-open-square
-				))
+        cider-load-buffer
+        cljr-destructure-keys
+        cljr-slash
+        mark-sexp
+        ns-copy-including-secondary
+        paredit-backward
+        paredit-forward-slurp-sexp
+        paredit-open-square
+        paredit-reindent-defun
+        ))

@@ -8,12 +8,13 @@
 
 (global-set-key [C-M-f8]
                 (lambda () (interactive)
-                  (cider-connect "localhost" 7888)))
+                  (cider-connect '(:host "localhost" :port 7888))))
 
 (global-set-key [C-S-f8]
                 (lambda () (interactive)
-                  (cider-connect "localhost"
-                                 (second (first (cider-locate-running-nrepl-ports))))))
+                  (cider-connect
+                   (plist-put '(:host "localhost")
+                              :port (second (first (cider-locate-running-nrepl-ports)))))))
 
 (global-set-key [M-f1] 'cider-repl-clear-buffer)
 
