@@ -38,13 +38,27 @@
     helm
     helm-projectile
     helm-cider
-    helm-swoop)
+    helm-swoop
+    idle-highlight-mode
+    magit
+    neotree)
   "A list of packages to ensure are installed at launch.")
+
+(setq frame-title-format
+      (list '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
+(setq inhibit-startup-screen t)
 
 (setq cider-repl-print-length nil)
 
 (setq whitespace-style '(trailing lines space-before-tab
                                   face indentation space-after-tab))
+
+(defun idle-highlight-hook ()
+  (idle-highlight-mode t))
+
+(add-hook 'emacs-lisp-mode-hook 'idle-highlight-hook)
+(add-hook 'clojure-mode-hook 'idle-highlight-hook)
 
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
@@ -55,8 +69,9 @@
 (load (concat user-emacs-directory "keybinds.el"))
 
 (require 'flycheck-joker)
-;(add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'clojure-mode-hook 'flycheck-mode)
+(add-hook 'clojure-mode-hook 'paredit-mode)
 
 (setq cider-font-lock-reader-conditionals nil)
 (setq cider-test-show-report-on-success nil)
@@ -87,6 +102,8 @@
  '(backup-inhibited t t)
  '(blink-matching-paren nil)
  '(cider-buffer-name-show-port t)
+ '(cider-repl-print-length nil)
+ '(cider-repl-use-pretty-printing t)
  '(cljr-favor-prefix-notation nil)
  '(cljr-favor-private-functions nil)
  '(custom-safe-themes
@@ -98,7 +115,7 @@
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
@@ -152,7 +169,7 @@
 
 (require 'flx-ido)
 (ido-mode 1)
-(ido-everywhere 1)
+;(ido-everywhere 1)
 (flx-ido-mode 1)
 ;; disable ido faces to see flx highlights.
 (setq ido-enable-flex-matching t)

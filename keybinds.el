@@ -1,4 +1,5 @@
 (global-set-key [f4] 'magit-status)
+(global-set-key [f5] 'neotree)
 
 (global-set-key [f6] 'highlight-regexp)
 (global-set-key [M-f6] 'unhighlight-regexp)
