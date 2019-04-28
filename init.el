@@ -243,7 +243,7 @@
 
 (require 'cl)
 (defadvice save-buffers-kill-emacs (around no-query-kill-emacs activate)
-  (flet ((process-list ())) ad-do-it))
+  (cl-flet ((process-list ())) ad-do-it))
 
 (define-clojure-indent
   ;; compojure
