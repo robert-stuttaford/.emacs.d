@@ -21,6 +21,8 @@
 
 (global-set-key (kbd "s-T") 'cider-test-run-test)
 
+(global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch.clj")))
+
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 

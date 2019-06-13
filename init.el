@@ -102,7 +102,7 @@
  '(backup-inhibited t t)
  '(blink-matching-paren nil)
  '(cider-buffer-name-show-port t)
- '(cider-repl-print-length nil)
+ '(cider-repl-print-length nil t)
  '(cider-repl-use-pretty-printing t)
  '(cljr-favor-prefix-notation nil)
  '(cljr-favor-private-functions nil)
