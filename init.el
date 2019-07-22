@@ -41,7 +41,8 @@
     helm-swoop
     idle-highlight-mode
     magit
-    neotree)
+    neotree
+    flycheck-clj-kondo)
   "A list of packages to ensure are installed at launch.")
 
 (setq frame-title-format
@@ -115,7 +116,7 @@
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote

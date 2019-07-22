@@ -21,7 +21,7 @@
 
 (global-set-key (kbd "s-T") 'cider-test-run-test)
 
-(global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch.clj")))
+(global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch/robert.clj")))
 
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
@@ -59,10 +59,10 @@
 (global-set-key (kbd "<M-s-down>") 'buf-move-down)
 
 ;; Move active cursor to window
-(global-set-key [s-left] 'windmove-left)
-(global-set-key [s-right] 'windmove-right)
-(global-set-key [s-up] 'windmove-up)
-(global-set-key [s-down] 'windmove-down)
+(global-set-key [C-left] 'windmove-left)
+(global-set-key [C-right] 'windmove-right)
+(global-set-key [C-up] 'windmove-up)
+(global-set-key [C-down] 'windmove-down)
 
 (defun cider-repl-reset (force)
   (interactive "P")
