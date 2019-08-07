@@ -5,6 +5,8 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (when (not package-archive-contents)
   (package-refresh-contents))
 

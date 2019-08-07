@@ -59,10 +59,10 @@
 (global-set-key (kbd "<M-s-down>") 'buf-move-down)
 
 ;; Move active cursor to window
-(global-set-key [C-left] 'windmove-left)
-(global-set-key [C-right] 'windmove-right)
-(global-set-key [C-up] 'windmove-up)
-(global-set-key [C-down] 'windmove-down)
+(global-set-key [C-s-left] 'windmove-left)
+(global-set-key [C-s-right] 'windmove-right)
+(global-set-key [C-s-up] 'windmove-up)
+(global-set-key [C-s-down] 'windmove-down)
 
 (defun cider-repl-reset (force)
   (interactive "P")
