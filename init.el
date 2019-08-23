@@ -72,9 +72,19 @@
 (load (concat user-emacs-directory "keybinds.el"))
 
 (require 'flycheck-joker)
+(require 'flycheck-clj-kondo)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'clojure-mode-hook 'flycheck-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
+
+(dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+  (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
+
+(dolist (checkers '((clj-kondo-clj . clojure-joker)
+                    (clj-kondo-cljs . clojurescript-joker)
+                    (clj-kondo-cljc . clojure-joker)
+                    (clj-kondo-edn . edn-joker)))
+  (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers))))
 
 (setq cider-font-lock-reader-conditionals nil)
 (setq cider-test-show-report-on-success nil)
@@ -114,6 +124,13 @@
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
+ '(flycheck-clj-kondo-clj-executable "/usr/local/bin/clj-kondo")
+ '(flycheck-clj-kondo-cljc-executable "/usr/local/bin/clj-kondo")
+ '(flycheck-clj-kondo-cljs-executable "/usr/local/bin/clj-kondo")
+ '(flycheck-clj-kondo-edn-executable "/usr/local/bin/clj-kondo")
+ '(flycheck-clojure-joker-executable "/usr/local/bin/joker")
+ '(flycheck-clojurescript-joker-executable "/usr/local/bin/joker")
+ '(flycheck-edn-joker-executable "/usr/local/bin/joker")
  '(git-link-open-in-browser t)
  '(nrepl-host "localhost")
  '(package-selected-packages
