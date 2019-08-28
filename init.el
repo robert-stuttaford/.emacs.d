@@ -421,4 +421,8 @@
 (require 'helm-projectile)
 (helm-projectile-on)
 
+(require 'symbol-focus)
+(define-key clojure-mode-map (kbd "M-s-f") 'sf/focus-at-point)
+
+
 ;;; init.el ends here
