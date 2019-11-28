@@ -37,14 +37,14 @@
     highlight
     git-link
     flycheck-joker
+    flycheck-clj-kondo
     helm
     helm-projectile
     helm-cider
     helm-swoop
     idle-highlight-mode
     magit
-    neotree
-    flycheck-clj-kondo)
+    neotree)
   "A list of packages to ensure are installed at launch.")
 
 (setq frame-title-format
