@@ -195,7 +195,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
-(split-window-right)
+;(split-window-right)
 
 (menu-bar-mode t)
 
@@ -283,6 +283,7 @@
   ;; tufte
   (tufte/p 'defun)
   (tufte/profile 'defun)
+  (tufte/profiled 'defun)
   ;;re-frame
   (rf/reg-event-db 'defun)
   (rf/reg-event-fx 'defun)
@@ -420,8 +421,5 @@
 (helm-cider-mode 1)
 (require 'helm-projectile)
 (helm-projectile-on)
-
-(require 'symbol-focus)
-(define-key clojure-mode-map (kbd "M-s-f") 'sf/focus-at-point)
 
 ;;; init.el ends here
