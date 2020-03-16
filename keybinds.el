@@ -115,8 +115,8 @@
 
 ;; centaur tabs
 
-(global-set-key (kbd "C-<prior>")  'centaur-tabs-backward)
-(global-set-key (kbd "C-<next>") 'centaur-tabs-forward)
+(global-set-key (kbd "<s-left>")  'centaur-tabs-backward)
+(global-set-key (kbd "<s-right>") 'centaur-tabs-forward)
 
 ;;
 
