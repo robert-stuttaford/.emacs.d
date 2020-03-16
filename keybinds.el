@@ -1,5 +1,5 @@
 (global-set-key [f4] 'magit-status)
-(global-set-key [f5] 'neotree)
+(global-set-key [f5] 'treemacs)
 
 (global-set-key [f6] 'highlight-regexp)
 (global-set-key [M-f6] 'unhighlight-regexp)
@@ -25,7 +25,9 @@
 
 (global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch/robert.clj")))
 
-(global-set-key [f11] (lambda () (interactive) (find-file "~/.lein/profiles.clj")))
+(global-set-key [f2] (lambda () (interactive) (find-file "~/Code/Cognician/Base/src/cognician/base/models/program.cljc")))
+
+(global-set-key [f11] (lambda () (interactive) (find-file "~/.clojure/deps.edn")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
 (require 'projectile)
@@ -39,13 +41,9 @@
 (defun find-project-file (file)
   (find-file (expand-file-name file (projectile-project-root))))
 
-(global-set-key [f9]
-                (lambda () (interactive)
-                  (find-project-file "dev/user.clj")))
-
 (global-set-key [f10]
                 (lambda () (interactive)
-                  (find-project-file "project.clj")))
+                  (find-project-file "deps.edn")))
 
 ;; hide/show
 (global-set-key (kbd "C-.") 'hs-toggle-hiding)
@@ -66,30 +64,7 @@
 (global-set-key [C-s-up] 'windmove-up)
 (global-set-key [C-s-down] 'windmove-down)
 
-(defun cider-repl-reset (force)
-  (interactive "P")
-  (save-some-buffers)
-  (when force
-    (find-project-file "dev/user.clj")
-    (cider-load-buffer)
-    (cider-repl-set-ns "user"))
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert "(user/reset)")
-    (cider-repl-return)))
-
-(global-set-key (kbd "C-c r") 'cider-repl-reset)
-
 (global-unset-key (kbd "s-t"))
-
-(defun cider-class-path ()
-  (interactive)
-  (with-current-buffer (cider-current-repl-buffer)
-    (goto-char (point-max))
-    (insert "(clojure.pprint/pprint (sort (.split (System/getProperty \"java.class.path\") \":\")))")
-    (cider-repl-return)))
-
-(global-set-key (kbd "C-c P") 'cider-class-path)
 
 (require 'git-link)
 
@@ -138,3 +113,14 @@
 (global-set-key (kbd "M-x") #'helm-M-x)
 (global-set-key (kbd "C-x b") #'helm-buffers-list)
 
+;; centaur tabs
+
+(global-set-key (kbd "C-<prior>")  'centaur-tabs-backward)
+(global-set-key (kbd "C-<next>") 'centaur-tabs-forward)
+
+;;
+
+(global-set-key (kbd "C-<prior>")  'centaur-tabs-backward)
+
+
+;;; keybinds.el ends here

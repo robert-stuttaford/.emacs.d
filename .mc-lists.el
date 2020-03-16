@@ -11,6 +11,7 @@
 				cljr-destructure-keys
 				cljr-move-to-let
 				cljr-slash
+				kill-region
 				mark-sexp
 				ns-copy-including-secondary
 				paredit-backward

@@ -44,7 +44,8 @@
     helm-swoop
     idle-highlight-mode
     magit
-    neotree)
+    neotree
+    centaur-tabs)
   "A list of packages to ensure are installed at launch.")
 
 (setq frame-title-format
@@ -135,11 +136,15 @@
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (treemacs-magit treemacs-projectile centaur-tabs treemacs flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
-    ((cider-ns-refresh-after-fn . "cognician.datomic-doc.service/start-web")
+    ((cider-ns-refresh-after-fn . "dev/start")
+     (cider-ns-refresh-before-fn . "dev/stop")
+     (cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
+     (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web")
+     (cider-ns-refresh-after-fn . "cognician.datomic-doc.service/start-web")
      (cider-ns-refresh-before-fn . "cognician.datomic-doc.service/stop-web")
      (cider-ns-refresh-after-fn . "user/start-web")
      (cider-ns-refresh-before-fn . "user/stop-web")
@@ -195,7 +200,7 @@
 (setq ido-enable-flex-matching t)
 (setq ido-use-faces nil)
 
-;(split-window-right)
+(split-window-right)
 
 (menu-bar-mode t)
 
@@ -284,6 +289,8 @@
   (tufte/p 'defun)
   (tufte/profile 'defun)
   (tufte/profiled 'defun)
+  (tufte/defnp 'defun)
+  (tufte/fnp 'defun)
   ;;re-frame
   (rf/reg-event-db 'defun)
   (rf/reg-event-fx 'defun)
@@ -360,8 +367,8 @@
             (define-key ido-completion-map (kbd "C-n") 'ido-next-match)
             (define-key ido-completion-map (kbd "C-p") 'ido-prev-match)))
 
-;;; Fira code
-(set-frame-font "Fira Code 16")
+;;; JetBrains Mono
+(set-frame-font "JetBrains Mono 16")
 
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
@@ -421,5 +428,8 @@
 (helm-cider-mode 1)
 (require 'helm-projectile)
 (helm-projectile-on)
+
+(require 'centaur-tabs)
+(centaur-tabs-mode t)
 
 ;;; init.el ends here
