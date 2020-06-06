@@ -1,5 +1,5 @@
 (global-set-key [f4] 'magit-status)
-(global-set-key [f5] 'treemacs)
+(global-set-key [f5] 'neotree)
 
 (global-set-key [f6] 'highlight-regexp)
 (global-set-key [M-f6] 'unhighlight-regexp)
@@ -115,8 +115,10 @@
 
 ;; centaur tabs
 
-(global-set-key (kbd "<s-left>")  'centaur-tabs-backward)
-(global-set-key (kbd "<s-right>") 'centaur-tabs-forward)
+(require 'centaur-tabs)
+
+(global-set-key (kbd "s-[")  'centaur-tabs-backward)
+(global-set-key (kbd "s-]") 'centaur-tabs-forward)
 
 ;;
 

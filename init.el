@@ -136,7 +136,7 @@
  '(nrepl-host "localhost")
  '(package-selected-packages
    (quote
-    (treemacs-magit treemacs-projectile centaur-tabs treemacs flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+    (centaur-tabs flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
