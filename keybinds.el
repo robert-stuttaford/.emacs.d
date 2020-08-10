@@ -25,7 +25,7 @@
 
 (global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch/robert.clj")))
 
-(global-set-key [f2] (lambda () (interactive) (find-file "~/Code/Cognician/Base/src/cognician/base/models/program.cljc")))
+(global-set-key [f2] (lambda () (interactive) (find-file "~/Code/Cognician/Tock/src/cognician/report_queue.clj")))
 
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.clojure/deps.edn")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))

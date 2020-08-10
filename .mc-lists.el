@@ -10,6 +10,7 @@
 				cider-load-buffer
 				cljr-destructure-keys
 				cljr-move-to-let
+				cljr-raise-sexp
 				cljr-slash
 				kill-region
 				mark-sexp

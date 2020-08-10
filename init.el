@@ -15,8 +15,8 @@
   '(;; Clojure & friends
     clojure-mode
     cider
-    align-cljlet
     clj-refactor
+    align-cljlet
     cider-eval-sexp-fu
     html-to-hiccup
     ;; Lisps
@@ -140,7 +140,9 @@
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
    (quote
-    ((cider-ns-refresh-after-fn . "dev/start")
+    ((cider-ns-refresh-after-fn . "clj-and-cljs-app.main/start")
+     (cider-ns-refresh-before-fn . "clj-and-cljs-app.main/stop")
+     (cider-ns-refresh-after-fn . "dev/start")
      (cider-ns-refresh-before-fn . "dev/stop")
      (cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web")
