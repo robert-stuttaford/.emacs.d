@@ -13,6 +13,7 @@
 ;; Add in your own as you wish:
 (defvar my-packages
   '(;; Clojure & friends
+    paredit
     clojure-mode
     cider
     clj-refactor
