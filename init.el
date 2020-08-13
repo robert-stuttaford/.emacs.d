@@ -297,7 +297,10 @@
   (rf/reg-event-db 'defun)
   (rf/reg-event-fx 'defun)
   (rf/reg-sub 'defun)
-  (rf/reg-fx 'defun))
+  (rf/reg-fx 'defun)
+  ;; cognician - manage
+  (admin-only! 'defun)
+  (group-editor-only! 'defun))
 
 (font-lock-add-keywords
  nil '(("\\<\\(FIX\\(ME\\)?\\|TODO\\|HACK\\|REFACTOR\\|NOCOMMIT\\)"

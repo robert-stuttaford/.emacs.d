@@ -16,6 +16,7 @@
 				mark-sexp
 				ns-copy-including-secondary
 				paredit-backward
+				paredit-backward-kill-word
 				paredit-forward-slurp-sexp
 				paredit-open-square
 				paredit-reindent-defun
