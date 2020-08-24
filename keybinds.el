@@ -11,6 +11,13 @@
                 (lambda () (interactive)
                   (cider-connect '(:host "localhost" :port 7888))))
 
+(global-set-key [C-S-f9]
+                (lambda () (interactive)
+                  (setq cider-shadow-default-options "tools")
+                  (cider-connect-clj&cljs
+                   (plist-put '(:host "localhost" :cljs-repl-type shadow)
+                              :port (second (first (cider-locate-running-nrepl-ports)))))))
+
 (global-set-key [C-S-f8]
                 (lambda () (interactive)
                   (cider-connect

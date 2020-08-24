@@ -1,8 +1,10 @@
 (require 'package)
 (add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+           '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
@@ -37,7 +39,7 @@
     color-identifiers-mode
     highlight
     git-link
-    flycheck-joker
+    ;flycheck-joker
     flycheck-clj-kondo
     helm
     helm-projectile
@@ -64,7 +66,6 @@
 
 (add-hook 'emacs-lisp-mode-hook 'idle-highlight-hook)
 (add-hook 'clojure-mode-hook 'idle-highlight-hook)
-
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -73,7 +74,7 @@
 ;; Load key bindings.
 (load (concat user-emacs-directory "keybinds.el"))
 
-(require 'flycheck-joker)
+;(require 'flycheck-joker)
 (require 'flycheck-clj-kondo)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'clojure-mode-hook 'flycheck-mode)
@@ -82,11 +83,11 @@
 (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
   (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
 
-(dolist (checkers '((clj-kondo-clj . clojure-joker)
-                    (clj-kondo-cljs . clojurescript-joker)
-                    (clj-kondo-cljc . clojure-joker)
-                    (clj-kondo-edn . edn-joker)))
-  (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers))))
+;; (dolist (checkers '((clj-kondo-clj . clojure-joker)
+;;                     (clj-kondo-cljs . clojurescript-joker)
+;;                     (clj-kondo-cljc . clojure-joker)
+;;                     (clj-kondo-edn . edn-joker)))
+;;   (flycheck-add-next-checker (car checkers) (cons 'error (cdr checkers))))
 
 (setq cider-font-lock-reader-conditionals nil)
 (setq cider-test-show-report-on-success nil)
@@ -122,8 +123,7 @@
  '(cljr-favor-prefix-notation nil)
  '(cljr-favor-private-functions nil)
  '(custom-safe-themes
-   (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default)))
+   '("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" default))
  '(delete-selection-mode t)
  '(fci-rule-color "#393939")
  '(flycheck-clj-kondo-clj-executable "/usr/local/bin/clj-kondo")
@@ -136,12 +136,10 @@
  '(git-link-open-in-browser t)
  '(nrepl-host "localhost")
  '(package-selected-packages
-   (quote
-    (centaur-tabs flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit)))
+   '(centaur-tabs flycheck-clj-kondo neotree magit idle-highlight-mode floobits helm-swoop smart-mode-line-powerline-theme smart-mode-line flycheck-joker html-to-hiccup flx-ido ag avy expand-region git-link color-identifiers-mode buffer-move powerline color-theme-sanityinc-tomorrow markdown-mode ack-and-a-half projectile popup company paxedit rainbow-delimiters cider-eval-sexp-fu clj-refactor align-cljlet cider clojure-snippets clojure-mode starter-kit-lisp starter-kit-bindings starter-kit))
  '(projectile-use-git-grep t)
  '(safe-local-variable-values
-   (quote
-    ((cider-ns-refresh-after-fn . "clj-and-cljs-app.main/start")
+   '((cider-ns-refresh-after-fn . "clj-and-cljs-app.main/start")
      (cider-ns-refresh-before-fn . "clj-and-cljs-app.main/stop")
      (cider-ns-refresh-after-fn . "dev/start")
      (cider-ns-refresh-before-fn . "dev/stop")
@@ -168,14 +166,13 @@
      (cider-cljs-lein-repl . "(do (dev) (go) (cljs-repl))")
      (cider-ns-refresh-after-fn . "reloaded.repl/resume")
      (cider-ns-refresh-before-fn . "reloaded.repl/suspend")
-     (whitespace-line-column . 80)
-     (lexical-binding . t))))
+     (whitespace-line-column . 86)
+     (lexical-binding . t)))
  '(show-paren-delay 0)
  '(show-paren-mode t)
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#f2777a")
+   '((20 . "#f2777a")
      (40 . "#f99157")
      (60 . "#ffcc66")
      (80 . "#99cc99")
@@ -192,8 +189,9 @@
      (300 . "#f2777a")
      (320 . "#f99157")
      (340 . "#ffcc66")
-     (360 . "#99cc99"))))
- '(vc-annotate-very-old-color nil))
+     (360 . "#99cc99")))
+ '(vc-annotate-very-old-color nil)
+ '(whitespace-line-column 97))
 
 (require 'flx-ido)
 (ido-mode 1)
@@ -274,6 +272,7 @@
   (cl-flet ((process-list ())) ad-do-it))
 
 (define-clojure-indent
+  (add-watch 'defun)
   ;; compojure
   (context 'defun)
   (GET 'defun)
