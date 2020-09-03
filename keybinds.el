@@ -37,6 +37,9 @@
 (global-set-key [f11] (lambda () (interactive) (find-file "~/.clojure/deps.edn")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
+(global-set-key (kbd "<C-wheel-down>") nil)
+(global-set-key (kbd "<C-wheel-up>") nil)
+
 (require 'projectile)
 
 (define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
