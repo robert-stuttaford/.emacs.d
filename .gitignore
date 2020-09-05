@@ -11,3 +11,5 @@ bookmarks
 ido.last
 projectile-bookmarks.eld
 .cache
+.mc-lists.el
+network-security.data
