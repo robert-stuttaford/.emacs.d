@@ -47,12 +47,16 @@
     ;; Misc.
     buffer-move
     highlight
-    super-save)
+    super-save
+    exec-path-from-shell)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
 
 ;;; packages.el ends here

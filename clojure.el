@@ -47,7 +47,11 @@
   (rf/reg-fx 'defun)
   ;; cognician - manage
   (admin-only! 'defun)
-  (group-editor-only! 'defun))
+  (group-editor-only! 'defun)
+  ;; guardrails
+  (>def 'defun)
+  (>defn 'defun))
+
 (require 'flycheck-clj-kondo)
 
 (setq flycheck-clj-kondo-clj-executable "/usr/local/bin/clj-kondo")

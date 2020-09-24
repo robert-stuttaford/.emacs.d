@@ -29,9 +29,11 @@
  '(flycheck-color-mode-line-face-to-color 'mode-line-buffer-id)
  '(frame-background-mode 'dark)
  '(package-selected-packages
-   '(align-cljlet buffer-move cider cider-eval-sexp-fu clj-refactor clojure-mode color-identifiers-mode company flx-ido flycheck-clj-kondo git-link helm-swoop html-to-hiccup idle-highlight-mode magit markdown-mode neotree popup powerline projectile rainbow-delimiters centaur-tabs))
+   '(exec-path-from-shell align-cljlet buffer-move cider cider-eval-sexp-fu clj-refactor clojure-mode color-identifiers-mode company flx-ido flycheck-clj-kondo git-link helm-swoop html-to-hiccup idle-highlight-mode magit markdown-mode neotree popup powerline projectile rainbow-delimiters centaur-tabs))
  '(safe-local-variable-values
-   '((cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
+   '((cider-ns-refresh-after-fn . "dev/start")
+     (cider-ns-refresh-before-fn . "dev/stop")
+     (cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web")
      (lexical-binding . t)))
  '(show-paren-delay 0)
