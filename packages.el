@@ -33,11 +33,9 @@
     popup
     ;; Project navigation
     projectile
-    ;; helm
-    helm
-    helm-projectile
-    helm-cider
-    helm-swoop
+    ;; ivy / counsel / swiper
+    counsel
+    counsel-projectile
     ;; uis
     powerline
     centaur-tabs

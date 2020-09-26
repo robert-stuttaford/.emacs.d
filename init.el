@@ -9,7 +9,7 @@
   '("packages.el"
     "general.el"
     "font.el"
-    "helm.el"
+    "ivy.el"
     "whitespace.el"
     "hideshow.el"
     "projectile.el"

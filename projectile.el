@@ -5,11 +5,12 @@
 
 (projectile-mode)
 
+(setq projectile-completion-system 'ivy)
+
+(counsel-projectile-mode)
+
 (setq projectile-use-git-grep t)
 (setq projectile-show-paths-function 'projectile-hashify-with-relative-paths)
-
-(require 'helm-projectile)
-(helm-projectile-on)
 
 ;;; Keybinds
 

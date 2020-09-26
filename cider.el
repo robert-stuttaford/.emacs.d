@@ -19,8 +19,6 @@
 
 (add-to-list 'same-window-buffer-names "*cider")
 
-(helm-cider-mode 1)
-
 (setq cljr-favor-prefix-notation nil)
 (setq cljr-favor-private-functions nil)
 

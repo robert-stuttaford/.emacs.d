@@ -50,7 +50,9 @@
   (group-editor-only! 'defun)
   ;; guardrails
   (>def 'defun)
-  (>defn 'defun))
+  (>defn 'defun)
+  ;; relemma
+  (>deftrack 'defun))
 
 (require 'flycheck-clj-kondo)
 
