@@ -36,6 +36,7 @@
     ;; ivy / counsel / swiper
     counsel
     counsel-projectile
+    flx
     ;; uis
     powerline
     centaur-tabs

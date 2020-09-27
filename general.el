@@ -19,6 +19,9 @@
 (put 'upcase-region 'disabled nil)
 (put 'downcase-region 'disabled nil)
 
+;; Allow paste to over-write selection
+(delete-selection-mode 1)
+
 ;;; Configure Window
 
 (menu-bar-mode t)
