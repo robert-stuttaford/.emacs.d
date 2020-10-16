@@ -12,7 +12,10 @@
 
 ;; fuzzy find
 (setq ivy-re-builders-alist
-      '((t . ivy--regex-fuzzy)))
+      '((counsel-projectile-find-file . ivy--regex-fuzzy)
+        (counsel-find-file . ivy--regex-fuzzy)
+        (t . ivy--regex-plus)))
+
 (setq ivy-initial-inputs-alist nil)
 
 ;;; ivy.el ends here

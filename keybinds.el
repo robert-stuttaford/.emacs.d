@@ -4,8 +4,9 @@
 ;;; Code:
 
 (global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch/robert.clj")))
+(global-set-key [f2] (lambda () (interactive) (find-file "~/Code/Cognician/Base/deps.edn")))
+(global-set-key [f3] (lambda () (interactive) (find-file "~/Code/Cognician/Tock/deps.edn")))
 
-(global-set-key [f11] (lambda () (interactive) (find-file "~/.clojure/deps.edn")))
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
 ;; Swap current buffer with buffer in direction of arrow
