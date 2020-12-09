@@ -44,6 +44,7 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
+
 ;;; Super Save
 
 (super-save-mode +1)
@@ -51,6 +52,10 @@
 (setq super-save-auto-save-when-idle t)
 
 (setq auto-save-default nil)
+
+;;; Backups
+
+(setq backup-directory-alist `(("." . "~/.emacs-saves")))
 
 ;;; Company
 

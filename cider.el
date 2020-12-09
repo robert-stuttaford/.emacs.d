@@ -33,7 +33,7 @@
 
 (global-set-key [C-S-f9]
                 (lambda () (interactive)
-                  ;(setq cider-shadow-default-options "tools")
+                  (setq cider-shadow-default-options "tools")
                   (cider-connect-clj&cljs
                    (plist-put '(:host "localhost" :cljs-repl-type shadow)
                               :port (cl-second (cl-first (cider-locate-running-nrepl-ports)))))))
@@ -48,6 +48,6 @@
 
 (global-set-key (kbd "s-T") 'cider-test-run-test)
 
-(global-set-key [f3] 'cider-format-edn-region)
+(global-set-key [M-f3] 'cider-format-edn-region)
 
 ;;; cider.el ends here
