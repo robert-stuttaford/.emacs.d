@@ -19,6 +19,7 @@
     clojure-mode
     lsp-mode
     lsp-ui
+    lsp-treemacs
     cider
     clj-refactor
     align-cljlet
