@@ -16,7 +16,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(flx counsel-projectile exec-path-from-shell super-save highlight buffer-move git-link magit centaur-tabs powerline counsel projectile popup company color-identifiers-mode idle-highlight-mode rainbow-delimiters flycheck-clj-kondo html-to-hiccup cider-eval-sexp-fu align-cljlet clj-refactor cider clojure-mode))
+   '(lsp-mode flx counsel-projectile exec-path-from-shell super-save highlight buffer-move git-link magit centaur-tabs powerline counsel projectile popup company color-identifiers-mode idle-highlight-mode rainbow-delimiters flycheck-clj-kondo html-to-hiccup cider-eval-sexp-fu align-cljlet clj-refactor cider clojure-mode))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "dev/start")
      (cider-ns-refresh-before-fn . "dev/stop")

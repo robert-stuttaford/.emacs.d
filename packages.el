@@ -17,6 +17,8 @@
 (defvar my-packages
   '(;; Clojure & friends
     clojure-mode
+    lsp-mode
+    lsp-ui
     cider
     clj-refactor
     align-cljlet
