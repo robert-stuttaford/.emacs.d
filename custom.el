@@ -18,7 +18,9 @@
  '(package-selected-packages
    '(lsp-treemacs lsp-mode flx counsel-projectile exec-path-from-shell super-save highlight buffer-move git-link magit centaur-tabs powerline counsel projectile popup company color-identifiers-mode idle-highlight-mode rainbow-delimiters flycheck-clj-kondo html-to-hiccup cider-eval-sexp-fu align-cljlet clj-refactor cider clojure-mode))
  '(safe-local-variable-values
-   '((cider-ns-refresh-after-fn . "dev/start")
+   '((cider-ns-refresh-after-fn . "clj-and-cljs-app.main/start")
+     (cider-ns-refresh-before-fn . "clj-and-cljs-app.main/stop")
+     (cider-ns-refresh-after-fn . "dev/start")
      (cider-ns-refresh-before-fn . "dev/stop")
      (cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web"))))

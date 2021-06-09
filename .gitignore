@@ -14,3 +14,4 @@ projectile-bookmarks.eld
 .mc-lists.el
 network-security.data
 recentf
+.lsp-session-*

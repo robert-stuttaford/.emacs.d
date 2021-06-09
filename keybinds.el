@@ -6,6 +6,7 @@
 (global-set-key [f1] (lambda () (interactive) (find-file "~/Code/Cognician/Monolith/dev/scratch/robert.clj")))
 (global-set-key [f2] (lambda () (interactive) (find-file "~/Code/Cognician/Base/deps.edn")))
 (global-set-key [f3] (lambda () (interactive) (find-file "~/Code/Cognician/Tock/deps.edn")))
+(global-set-key [M-f3] (lambda () (interactive) (find-file "~/Code/Cognician/Chat/deps.edn")))
 
 (global-set-key [f12] (lambda () (interactive) (find-file "~/.emacs.d/init.el")))
 
