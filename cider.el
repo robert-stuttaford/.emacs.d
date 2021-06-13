@@ -48,6 +48,6 @@
 
 (global-set-key (kbd "s-T") 'cider-test-run-test)
 
-(global-set-key [M-f3] 'cider-format-edn-region)
+(global-set-key [M-S-f3] 'cider-format-edn-region)
 
 ;;; cider.el ends here
