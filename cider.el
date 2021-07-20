@@ -13,6 +13,7 @@
 (setq cider-save-file-on-load nil)
 (setq cider-buffer-name-show-port t)
 (setq cider-repl-print-length nil)
+(setq cider-show-error-buffer t)
 
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
