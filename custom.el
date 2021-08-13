@@ -17,7 +17,9 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages '(clojure-mode))
  '(safe-local-variable-values
-   '((cider-ns-refresh-after-fn . "dev/start")
+   '((cider-ns-refresh-after-fn . "clj-and-cljs-app.main/start")
+     (cider-ns-refresh-before-fn . "clj-and-cljs-app.main/stop")
+     (cider-ns-refresh-after-fn . "dev/start")
      (cider-ns-refresh-before-fn . "dev/stop")
      (cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web"))))
