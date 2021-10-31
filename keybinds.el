@@ -48,5 +48,6 @@
 (global-set-key [f6] 'highlight-regexp)
 (global-set-key [M-f6] 'unhighlight-regexp)
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
+(global-set-key (kbd "s-M-g") 'rgrep)
 
 ;;; keybinds.el ends here

@@ -36,7 +36,7 @@
 
 (global-set-key [C-S-f9]
                 (lambda () (interactive)
-                  ;(setq cider-shadow-default-options "tools")
+                  (setq cider-shadow-default-options "tools")
                   (cider-connect-clj&cljs
                    (plist-put '(:host "localhost" :cljs-repl-type shadow)
                               :port (cl-second (cl-first (cider-locate-running-nrepl-ports)))))))

@@ -12,21 +12,22 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'idle-highlight-mode)
-;(add-hook 'clojure-mode-hook 'lsp)
+(add-hook 'clojure-mode-hook 'lsp)
 
 (add-hook 'clojurescript-mode-hook 'flycheck-mode)
 (add-hook 'clojurescript-mode-hook 'paredit-mode)
 (add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurescript-mode-hook 'idle-highlight-mode)
-;(add-hook 'clojurescript-mode-hook 'lsp)
+(add-hook 'clojurescript-mode-hook 'lsp)
 
 (add-hook 'clojurec-mode-hook 'flycheck-mode)
 (add-hook 'clojurec-mode-hook 'paredit-mode)
 (add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurec-mode-hook 'idle-highlight-mode)
-;(add-hook 'clojurec-mode-hook 'lsp)
+(add-hook 'clojurec-mode-hook 'lsp)
 
 (defun cljr-mode-setup ()
+  "Clj-refactor setup."
   (clj-refactor-mode 1)
   (cljr-add-keybindings-with-prefix "s-r"))
 
@@ -38,8 +39,8 @@
       read-process-output-max (* 1024 1024)
       company-idle-delay 0.3
       company-minimum-prefix-length 3
-      ;; lsp-lens-enable nil
-      ;; lsp-signature-auto-activate nil
+      lsp-lens-enable nil
+      lsp-signature-auto-activate nil
       ;; lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
       ;; lsp-enable-completion-at-point nil ; uncomment to use cider completion instead of lsp
       )
