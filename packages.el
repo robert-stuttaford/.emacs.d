@@ -18,7 +18,7 @@
   '(;; Clojure & friends
     clojure-mode
     lsp-mode
-    lsp-ui
+    ;lsp-ui
     lsp-treemacs
     cider
     clj-refactor
@@ -50,7 +50,10 @@
     buffer-move
     highlight
     super-save
-    exec-path-from-shell)
+    exec-path-from-shell
+    ;; theme
+    leuven-theme
+    doom-themes)
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
