@@ -25,6 +25,10 @@
 (defun find-project-file (file)
   (find-file (expand-file-name file (projectile-project-root))))
 
+(global-set-key [f8]
+                (lambda () (interactive)
+                  (find-project-file "bb.edn")))
+
 (global-set-key [f9]
                 (lambda () (interactive)
                   (find-project-file "shadow-cljs.edn")))
