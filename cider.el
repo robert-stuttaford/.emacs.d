@@ -23,7 +23,7 @@
 (setq cljr-favor-prefix-notation nil)
 (setq cljr-favor-private-functions nil)
 
-(add-hook 'before-save-hook 'cider-format-buffer t t)
+(add-hook 'before-save-hook 'lsp-format-buffer)
 
 ;;; Keybinds
 
