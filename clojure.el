@@ -26,6 +26,8 @@
 (add-hook 'clojurec-mode-hook 'idle-highlight-mode)
 (add-hook 'clojurec-mode-hook 'lsp)
 
+(add-to-list 'auto-mode-alist '("\\.carve\\'" . compilation-mode))
+
 (defun cljr-mode-setup ()
   "Clj-refactor setup."
   (clj-refactor-mode 1)
