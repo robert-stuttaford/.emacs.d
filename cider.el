@@ -23,8 +23,6 @@
 (setq cljr-favor-prefix-notation nil)
 (setq cljr-favor-private-functions nil)
 
-(add-hook 'before-save-hook 'lsp-format-buffer)
-
 ;;; Keybinds
 
 (global-set-key [f8] 'cider-connect)
