@@ -27,6 +27,10 @@
 (menu-bar-mode t)
 (setq frame-title-format
       (list '(buffer-file-name "%f" (dired-directory dired-directory "%b"))))
+
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
+
 (split-window-right)
 
 (require 'powerline)

@@ -3,8 +3,9 @@
 ;;; Font
 ;;; Code:
 
-;(set-face-attribute 'default nil :height 140)
-(set-frame-font "JetBrains Mono 15")
+;;(set-face-attribute 'default nil :height 140)
+;;(set-frame-font "JetBrains Mono 15")
+(set-frame-font "Iosevka Term 16")
 
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")

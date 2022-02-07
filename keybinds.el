@@ -11,6 +11,10 @@
  [f12]
  (lambda () (interactive)
    (find-file "~/.emacs.d/init.el")))
+(global-set-key
+ [f11]
+ (lambda () (interactive)
+   (find-file "~/.clojure/deps.edn")))
 
 ;; Swap current buffer with buffer in direction of arrow
 (global-set-key (kbd "<M-s-right>") 'buf-move-right)
