@@ -81,19 +81,9 @@
   (tufte/profiled 'defun)
   (tufte/defnp 'defun)
   (tufte/fnp 'defun)
-  ;;re-frame
-  (rf/reg-event-db 'defun)
-  (rf/reg-event-fx 'defun)
-  (rf/reg-sub 'defun)
-  (rf/reg-fx 'defun)
   ;; cognician - manage
   (admin-only! 'defun)
-  (group-editor-only! 'defun)
-  ;; guardrails
-  (>def 'defun)
-  (>defn 'defun)
-  ;; relemma
-  (>deftrack 'defun))
+  (group-editor-only! 'defun))
 
 (require 'flycheck-clj-kondo)
 

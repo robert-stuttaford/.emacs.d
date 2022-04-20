@@ -12,7 +12,7 @@
 (setq cider-repl-display-help-banner nil)
 (setq cider-save-file-on-load nil)
 (setq cider-buffer-name-show-port t)
-(setq cider-repl-print-length nil)
+(setq cider-print-options '(("right-margin" 122)))
 (setq cider-show-error-buffer t)
 
 (add-hook 'cider-mode-hook #'eldoc-mode)
@@ -34,7 +34,7 @@
 
 (global-set-key [C-S-f9]
                 (lambda () (interactive)
-                  (setq cider-shadow-default-options "tools")
+                  ;(setq cider-shadow-default-options "tools")
                   (cider-connect-clj&cljs
                    (plist-put '(:host "localhost" :cljs-repl-type shadow)
                               :port (cl-second (cl-first (cider-locate-running-nrepl-ports)))))))

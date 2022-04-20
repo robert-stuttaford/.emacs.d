@@ -25,9 +25,10 @@
 (dolist (cf config-files)
   (load (expand-file-name cf user-emacs-directory)))
 
-;;(load-theme 'tango-dark t)
+(load-theme 'tango-dark t)
 
-(load-theme 'leuven t)
+;;(load-theme 'leuven t)
+
 
 
 ;; (setq doom-themes-enable-bold t
