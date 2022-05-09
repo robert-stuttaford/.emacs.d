@@ -51,4 +51,18 @@
 
 (global-set-key [M-S-f3] 'cider-format-edn-region)
 
+;;; Clerk
+
+(defun clerk-show ()
+  (interactive)
+  (save-buffer)
+  (let
+      ((filename
+        (buffer-file-name)))
+    (when filename
+      (cider-interactive-eval
+       (concat "(nextjournal.clerk/show! \"" filename "\")")))))
+
+(define-key clojure-mode-map (kbd "<M-return>") 'clerk-show)
+
 ;;; cider.el ends here
