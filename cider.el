@@ -68,7 +68,8 @@
                            (catch Throwable e
                              (require 'cognician.system)
                              (find-var 'cognician.system/restart-systems!)))]
-    (restart-fn))"))))
+    (restart-fn)
+:cognician/system-restarted)"))))
 
 (define-key clojure-mode-map (kbd "<M-return>") 'restart-cognician-system)
 
