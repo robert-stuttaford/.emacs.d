@@ -15,8 +15,6 @@
 (setq cider-print-options '(("right-margin" 122)))
 (setq cider-show-error-buffer t)
 
-(setq cider-redirect-server-output-to-repl nil)
-
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
