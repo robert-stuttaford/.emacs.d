@@ -48,6 +48,7 @@
 (add-hook 'clojure-mode-hook 'cljr-mode-setup)
 (add-hook 'clojurec-mode-hook 'cljr-mode-setup)
 
+(setq lsp-keymap-prefix "s-l")
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
@@ -87,10 +88,10 @@
 
 (require 'flycheck-clj-kondo)
 
-(setq flycheck-clj-kondo-clj-executable "/usr/local/bin/clj-kondo")
-(setq flycheck-clj-kondo-cljc-executable "/usr/local/bin/clj-kondo")
-(setq flycheck-clj-kondo-cljs-executable "/usr/local/bin/clj-kondo")
-(setq flycheck-clj-kondo-edn-executable "/usr/local/bin/clj-kondo")
+(setq flycheck-clj-kondo-clj-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-cljc-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-cljs-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-edn-executable "/opt/homebrew/bin/clj-kondo")
 
 (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
   (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))

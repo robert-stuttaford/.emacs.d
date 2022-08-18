@@ -71,4 +71,19 @@
 
 (define-key clojure-mode-map (kbd "<M-return>") 'restart-cognician-system)
 
+;; ‘C-x r s <register-key>’ save to register
+;; 'C-c C-j x <register-key>' to send to repl
+(defun cider-insert-register-contents (register)
+  (interactive (list (register-read-with-preview "From register")))
+  (let ((form (get-register register)))
+    ;; could put form into a buffer and check if its parens are
+    ;; balanced
+    (if form
+        (cider-insert-in-repl form (not cider-invert-insert-eval-p))
+      (user-error "No saved form in register"))))
+
+(define-key 'cider-insert-commands-map (kbd "x") #'cider-insert-register-contents)
+(define-key 'cider-insert-commands-map (kbd "C-x") #'cider-insert-register-contents)
+(define-key cider-repl-mode-map (kbd "C-c C-j") 'cider-insert-commands-map)
+
 ;;; cider.el ends here
