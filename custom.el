@@ -18,7 +18,9 @@
  '(cljr-insert-newline-after-require nil)
  '(package-selected-packages '(magit-delta dracula-theme clojure-mode))
  '(safe-local-variable-values
-   '((cider-ns-refresh-after-fn . "dev/start")
+   '((cider-ns-refresh-after-fn . "integrant.repl/resume")
+     (cider-ns-refresh-before-fn . "integrant.repl/suspend")
+     (cider-ns-refresh-after-fn . "dev/start")
      (cider-ns-refresh-before-fn . "dev/stop")
      (cider-ns-refresh-after-fn . "cognician.server-daemon/start-web")
      (cider-ns-refresh-before-fn . "cognician.server-daemon/stop-web"))))
