@@ -88,6 +88,18 @@
 
 (define-key clojure-mode-map (kbd "<M-return>") 'restart-cognician-system)
 
+(defun clerk-show ()
+  (interactive)
+  (save-buffer)
+  (let
+      ((filename
+        (buffer-file-name)))
+    (when filename
+      (cider-interactive-eval
+       (concat "(nextjournal.clerk/show! \"" filename "\")")))))
+
+(define-key clojure-mode-map (kbd "<M-S-return>") 'clerk-show)
+
 ;; ‘C-x r s <register-key>’ save to register
 ;; 'C-c C-j x <register-key>' to send to repl
 (defun cider-insert-register-contents (register)
