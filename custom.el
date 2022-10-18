@@ -16,7 +16,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cljr-insert-newline-after-require nil)
- '(package-selected-packages '(magit-delta dracula-theme clojure-mode))
+ '(package-selected-packages '(smex magit-delta dracula-theme clojure-mode))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "integrant.repl/resume")
      (cider-ns-refresh-before-fn . "integrant.repl/suspend")

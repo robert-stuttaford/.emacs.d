@@ -40,6 +40,11 @@
 (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
 (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
 
+(global-set-key [f7]
+                (lambda ()
+                  (interactive)
+                  (cider-eval-print-last-sexp 't)))
+
 ;;; Keybinds
 
 (global-set-key [f8] 'cider-connect)

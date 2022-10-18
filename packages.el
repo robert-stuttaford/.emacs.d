@@ -40,6 +40,7 @@
     counsel
     counsel-projectile
     flx
+    smex ; so that counsel remembers history for M-x
     ;; uis
     powerline
     centaur-tabs
