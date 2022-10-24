@@ -98,6 +98,9 @@
 
 ;;; Keybinds
 
+(global-set-key (kbd "M-{") 'flycheck-previous-error)
+(global-set-key (kbd "M-}") 'flycheck-next-error)
+
 (require 'align-cljlet)
 
 (global-set-key (kbd "s-i") 'align-cljlet)
