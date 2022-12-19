@@ -93,6 +93,25 @@
 
 (define-key clojure-mode-map (kbd "<M-return>") 'restart-cognician-system)
 
+(defun start-portal-ui ()
+  (interactive)
+  (save-buffer)
+  (let ((filename
+         (buffer-file-name)))
+    (when filename
+      (cider-interactive-eval
+       "(do ;; portal
+    (require '[portal.api :as p])
+
+    (defn submit [value]
+      (p/submit (with-meta value {:portal.viewer/default :portal.viewer/pprint})))
+
+    (def portal (portal.api/open))
+
+    (add-tap #'submit))"))))
+
+(define-key clojure-mode-map [C-S-f10] 'start-portal-ui)
+
 (defun clerk-show ()
   (interactive)
   (save-buffer)

@@ -30,6 +30,8 @@
 ;;(load-theme 'leuven t)
 
 
+(setq max-lisp-eval-depth 2000)
+
 
 ;; (setq doom-themes-enable-bold t
 ;;       doom-themes-enable-italic t)
