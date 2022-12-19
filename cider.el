@@ -108,7 +108,9 @@
 
     (def portal (portal.api/open))
 
-    (add-tap #'submit))"))))
+    (add-tap #'submit)
+
+    :portal/launched)"))))
 
 (define-key clojure-mode-map [C-S-f10] 'start-portal-ui)
 
