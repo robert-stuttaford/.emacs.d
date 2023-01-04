@@ -12,6 +12,8 @@
 (setq projectile-use-git-grep t)
 (setq projectile-show-paths-function 'projectile-hashify-with-relative-paths)
 
+(setq projectile-create-missing-test-files t)
+
 ;;; Keybinds
 
 (require 'projectile)
@@ -21,6 +23,7 @@
 (define-key projectile-mode-map [?\s-f] 'projectile-find-file)
 (define-key projectile-mode-map [?\s-g] 'projectile-grep)
 (define-key projectile-mode-map [?\s-G] 'projectile-replace-regexp)
+(define-key projectile-mode-map [?\s-T] 'projectile-toggle-between-implementation-and-test)
 
 (defun find-project-file (file)
   (find-file (expand-file-name file (projectile-project-root))))

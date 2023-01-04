@@ -104,9 +104,9 @@
     (require '[portal.api :as p])
 
     (defn submit [value]
-      (p/submit (with-meta value {:portal.viewer/default :portal.viewer/pprint})))
+      (p/submit value (with-meta value {:portal.viewer/default :portal.viewer/pprint})))
 
-    (def portal (portal.api/open))
+    (def portal (portal.api/open {:theme :portal.colors/solarized-light}))
 
     (add-tap #'submit)
 
