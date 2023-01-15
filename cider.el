@@ -100,11 +100,12 @@
          (buffer-file-name)))
     (when filename
       (cider-interactive-eval
-       "(do ;; portal
+       "
+  (do
     (require '[portal.api :as p])
 
     (defn submit [value]
-      (p/submit value (with-meta value {:portal.viewer/default :portal.viewer/pprint})))
+      (p/submit (with-meta value {:portal.viewer/default :portal.viewer/pprint})))
 
     (def portal (portal.api/open {:theme :portal.colors/solarized-light}))
 

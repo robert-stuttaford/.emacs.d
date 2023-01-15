@@ -17,6 +17,7 @@
  ;; If there is more than one, they won't work right.
  '(cider-auto-test-mode t)
  '(cljr-insert-newline-after-require nil)
+ '(cljr-print-right-margin 120)
  '(package-selected-packages '(smex magit-delta dracula-theme clojure-mode))
  '(safe-local-variable-values
    '((cider-ns-refresh-after-fn . "integrant.repl/resume")
