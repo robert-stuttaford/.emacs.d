@@ -25,6 +25,8 @@
 
 (require 'lsp)
 
+(setq lsp-idle-delay 0)
+
 (defun find-definition ()
   "Try to find definition of cursor via LSP otherwise fallback to cider."
   (interactive)
@@ -109,7 +111,7 @@
 
     (def portal (portal.api/open {:theme :portal.colors/solarized-light}))
 
-    (add-tap #'submit)
+    (add-tap #'p/submit)
 
     :portal/launched)"))))
 
