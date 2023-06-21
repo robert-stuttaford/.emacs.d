@@ -84,7 +84,10 @@
   (tufte/fnp 'defun)
   ;; cognician - manage
   (admin-only! 'defun)
-  (group-editor-only! 'defun))
+  (strata-only! 'defun)
+  (system-engineer-only! 'defun)
+  (group-editor-only! 'defun)
+  (clear-learner-data-only! 'defun))
 
 (require 'flycheck-clj-kondo)
 
