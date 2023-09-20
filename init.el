@@ -38,4 +38,6 @@
 
 ;; (load-theme 'doom-flatwhite t)
 
+(setq image-types '(svg png gif tiff jpeg xpm xbm pbm))
+
 ;;; init.el ends here
