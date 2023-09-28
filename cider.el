@@ -67,7 +67,7 @@
                 (lambda () (interactive)
                   (cider-connect
                    (plist-put '(:host "localhost")
-                              :port (cl-second (cl-first (cider-locate-running-nrepl-ports)))))))
+                              :port (cl-second (cl-first (cider-locate-running-nrepl-ports "/Users/robert/Code/Cognician/Monorepo/")))))))
 
 (global-set-key [M-f1] 'cider-repl-clear-buffer)
 

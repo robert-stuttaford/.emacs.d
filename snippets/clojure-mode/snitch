@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: snitch
+# key: snitch
+# --
+(require '[snitch.core :refer [defn* defmethod* *fn *let]])

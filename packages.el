@@ -52,6 +52,7 @@
     highlight
     super-save
     exec-path-from-shell
+    yasnippet
     ;; theme
     leuven-theme
     doom-themes)
