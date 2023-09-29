@@ -87,7 +87,12 @@
   (strata-only! 'defun)
   (system-engineer-only! 'defun)
   (group-editor-only! 'defun)
-  (clear-learner-data-only! 'defun))
+  (clear-learner-data-only! 'defun)
+  ;; snitch
+  (defn* 'defun)
+  (defmethod* 'defun)
+  (*fn 'defun)
+  (*let 'defun))
 
 (require 'flycheck-clj-kondo)
 
