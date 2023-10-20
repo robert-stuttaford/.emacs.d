@@ -61,7 +61,7 @@
                   ;(setq cider-shadow-default-options "tools")
                   (cider-connect-clj&cljs
                    (plist-put '(:host "localhost" :cljs-repl-type shadow)
-                              :port (cl-second (cl-first (cider-locate-running-nrepl-ports)))))))
+                              :port (cl-second (cl-first (cider-locate-running-nrepl-ports "/Users/robert/Code/Cognician/Monorepo/")))))))
 
 (global-set-key [C-S-f8]
                 (lambda () (interactive)
