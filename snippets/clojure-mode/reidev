@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: reidev
+# key: reidev
+# --
+(require '[cognician.system.reitit.dev :as rd])
+
+#_(rd/sanitise-request request)

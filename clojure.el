@@ -92,7 +92,9 @@
   (defn* 'defun)
   (defmethod* 'defun)
   (*fn 'defun)
-  (*let 'defun))
+  (*let 'defun)
+  ;; uix
+  (defui 'defun))
 
 (require 'flycheck-clj-kondo)
 

@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: datcom
+# key: datcom
+# --
+(comment
+  (require '[cognician.base.datomic :as datomic]
+           '[datomic.api :as d])
+
+  (def db (datomic/db))
+
+  (->> []
+       (datomic/annotate-tx db "robert@cognician.com" "")
+       ;;(d/with db)
+       (datomic/transact! (datomic/conn))
+       :tx-data
+       count)
+  )
