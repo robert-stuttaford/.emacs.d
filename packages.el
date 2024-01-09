@@ -17,45 +17,45 @@
 (defvar my-packages
   '(;; Clojure & friends
     clojure-mode
-    lsp-mode
-    ;lsp-ui
-    lsp-treemacs
+    ;lsp-mode
+    ;lsp-treemacs
     cider
     clj-refactor
-    align-cljlet
-    cider-eval-sexp-fu
-    html-to-hiccup
-    flycheck-clj-kondo
+    ;align-cljlet
+    ;cider-eval-sexp-fu
+    ;html-to-hiccup
+    ;flycheck-clj-kondo
     ;; Lisps
     paredit
-    rainbow-delimiters
-    idle-highlight-mode
-    color-identifiers-mode
+    ;rainbow-delimiters
+    ;idle-highlight-mode
+    ;color-identifiers-mode
     ;; Completion popup
-    company
-    popup
+    ;company
+    ;popup
     ;; Project navigation
-    projectile
+    ;projectile
     ;; ivy / counsel / swiper
-    counsel
-    counsel-projectile
-    flx
-    smex ; so that counsel remembers history for M-x
+    ;counsel
+    ;counsel-projectile
+    ;flx
+    ;smex ; so that counsel remembers history for M-x
     ;; uis
-    powerline
-    centaur-tabs
+    ;powerline
+    ;centaur-tabs
     ;; git
     magit
-    git-link
+    ;git-link
     ;; Misc.
-    buffer-move
-    highlight
-    super-save
-    exec-path-from-shell
-    yasnippet
+    ;buffer-move
+    ;highlight
+    ;super-save
+    ;exec-path-from-shell
+    ;yasnippet
     ;; theme
-    leuven-theme
-    doom-themes)
+    ;leuven-theme
+    ;doom-themes
+    )
   "A list of packages to ensure are installed at launch.")
 
 ;; Automaticaly install any missing packages
