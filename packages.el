@@ -63,7 +63,4 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-(when (memq window-system '(mac ns x))
-  (exec-path-from-shell-initialize))
-
 ;;; packages.el ends here
