@@ -8,22 +8,22 @@
 (setq initial-major-mode 'clojure-mode)
 (setq clojure-align-forms-automatically t)
 
-;(add-hook 'clojure-mode-hook 'flycheck-mode)
+(add-hook 'clojure-mode-hook 'flycheck-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
-;(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-;(add-hook 'clojure-mode-hook 'idle-highlight-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'clojure-mode-hook 'idle-highlight-mode)
 ;(add-hook 'clojure-mode-hook 'lsp)
 
-;(add-hook 'clojurescript-mode-hook 'flycheck-mode)
+(add-hook 'clojurescript-mode-hook 'flycheck-mode)
 (add-hook 'clojurescript-mode-hook 'paredit-mode)
-;(add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
-;(add-hook 'clojurescript-mode-hook 'idle-highlight-mode)
+(add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'clojurescript-mode-hook 'idle-highlight-mode)
 ;(add-hook 'clojurescript-mode-hook 'lsp)
 
-;(add-hook 'clojurec-mode-hook 'flycheck-mode)
+(add-hook 'clojurec-mode-hook 'flycheck-mode)
 (add-hook 'clojurec-mode-hook 'paredit-mode)
-;(add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
-;(add-hook 'clojurec-mode-hook 'idle-highlight-mode)
+(add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'clojurec-mode-hook 'idle-highlight-mode)
 ;(add-hook 'clojurec-mode-hook 'lsp)
 
 ;; (add-hook 'clojurescript-mode-hook
@@ -96,29 +96,30 @@
   ;; uix
   (defui 'defun))
 
-;; (require 'flycheck-clj-kondo)
+(require 'flycheck-clj-kondo)
 
-;; (setq flycheck-clj-kondo-clj-executable "/opt/homebrew/bin/clj-kondo")
-;; (setq flycheck-clj-kondo-cljc-executable "/opt/homebrew/bin/clj-kondo")
-;; (setq flycheck-clj-kondo-cljs-executable "/opt/homebrew/bin/clj-kondo")
-;; (setq flycheck-clj-kondo-edn-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-clj-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-cljc-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-cljs-executable "/opt/homebrew/bin/clj-kondo")
+(setq flycheck-clj-kondo-edn-executable "/opt/homebrew/bin/clj-kondo")
 
-;; (dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
-;;   (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
+(dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+  (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
 
-;; (require 'yasnippet)
-;; (yas-reload-all)
-;; (add-hook 'prog-mode-hook #'yas-minor-mode)
+(require 'yasnippet)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 
-;; ;;; Keybinds
+;;; Keybinds
 
-;; (global-set-key (kbd "M-{") 'flycheck-previous-error)
-;; (global-set-key (kbd "M-}") 'flycheck-next-error)
+(global-set-key (kbd "M-{") 'flycheck-previous-error)
+(global-set-key (kbd "M-}") 'flycheck-next-error)
 
-;; (require 'align-cljlet)
+(require 'align-cljlet)
 
-;; (global-set-key (kbd "s-i") 'align-cljlet)
+(global-set-key (kbd "s-i") 'align-cljlet)
 
-;; (global-set-key (kbd "M-q") 'lsp-format-buffer)
+(global-set-key (kbd "M-q") 'lsp-format-buffer)
 
 ;;; clojure.el ends here
+
