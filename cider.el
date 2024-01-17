@@ -14,6 +14,13 @@
 (setq cider-print-options '(("right-margin" 122)))
 (setq cider-show-error-buffer t)
 
+(setq
+   cider-repl-pop-to-buffer-on-connect nil
+   cider-repl-use-clojure-font-lock t
+   cider-font-lock-dynamically t
+   nrepl-log-messages nil
+   cider-redirect-server-output-to-repl t)
+
 (add-hook 'cider-mode-hook #'eldoc-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
@@ -22,24 +29,24 @@
 (setq cljr-favor-prefix-notation nil)
 (setq cljr-favor-private-functions nil)
 
-;; (require 'lsp)
+(require 'lsp)
 
-;; (setq lsp-idle-delay 0)
+(setq lsp-idle-delay 0)
 
-;; (defun find-definition ()
-;;   "Try to find definition of cursor via LSP otherwise fallback to cider."
-;;   (interactive)
-;;   (let ((cursor (point))
-;;         (buffer (current-buffer)))
-;;     (lsp-find-definition)
-;;     (when (and (eq buffer (current-buffer))
-;;                (eq cursor (point)))
-;;       (cider-find-var))))
+(defun find-definition ()
+  "Try to find definition of cursor via LSP otherwise fallback to cider."
+  (interactive)
+  (let ((cursor (point))
+        (buffer (current-buffer)))
+    ;(lsp-find-definition)
+    (when (and (eq buffer (current-buffer))
+               (eq cursor (point)))
+      (cider-find-var))))
 
-;; (define-key clojure-mode-map (kbd "M-.") #'find-definition)
-;; (define-key cider-mode-map (kbd "M-.") #'find-definition)
-;; (define-key clojurec-mode-map (kbd "M-.") #'find-definition)
-;; (define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
+(define-key clojure-mode-map (kbd "M-.") #'find-definition)
+(define-key cider-mode-map (kbd "M-.") #'find-definition)
+(define-key clojurec-mode-map (kbd "M-.") #'find-definition)
+(define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
 
 (global-set-key [f7]
                 (lambda ()

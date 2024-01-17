@@ -31,4 +31,7 @@
 
 (setq image-types '(svg png gif tiff jpeg xpm xbm pbm))
 
+;(setq inhibit-message nil)
+
+
 ;;; init.el ends here
