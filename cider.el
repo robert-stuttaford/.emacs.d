@@ -26,6 +26,8 @@
 
 (add-to-list 'same-window-buffer-names "*cider")
 
+(cider-auto-test-mode 1)
+
 (setq cljr-favor-prefix-notation nil)
 (setq cljr-favor-private-functions nil)
 
@@ -38,7 +40,7 @@
   (interactive)
   (let ((cursor (point))
         (buffer (current-buffer)))
-    ;(lsp-find-definition)
+    (lsp-find-definition)
     (when (and (eq buffer (current-buffer))
                (eq cursor (point)))
       (cider-find-var))))
