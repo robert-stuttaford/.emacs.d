@@ -15,7 +15,8 @@
   (package-refresh-contents))
 
 (defvar my-packages
-  '(;; Clojure & friends
+  '(gnu-elpa-keyring-update
+    ;; Clojure & friends
     clojure-mode
     lsp-mode
     cider
