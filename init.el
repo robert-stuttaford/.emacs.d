@@ -5,6 +5,9 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+;; fixes "error: Package ‘spinner-1.7.3’ is unavailable"
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (defvar config-files
   '("packages.el"
     "general.el"
