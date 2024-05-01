@@ -12,31 +12,31 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'idle-highlight-mode)
-;(add-hook 'clojure-mode-hook 'lsp)
+(add-hook 'clojure-mode-hook 'lsp)
 
 (add-hook 'clojurescript-mode-hook 'flycheck-mode)
 (add-hook 'clojurescript-mode-hook 'paredit-mode)
 (add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurescript-mode-hook 'idle-highlight-mode)
-;(add-hook 'clojurescript-mode-hook 'lsp)
+(add-hook 'clojurescript-mode-hook 'lsp)
 
 (add-hook 'clojurec-mode-hook 'flycheck-mode)
 (add-hook 'clojurec-mode-hook 'paredit-mode)
 (add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurec-mode-hook 'idle-highlight-mode)
-;(add-hook 'clojurec-mode-hook 'lsp)
+(add-hook 'clojurec-mode-hook 'lsp)
 
-; (add-hook 'clojurescript-mode-hook
-;           (lambda ()
-;              (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
+(add-hook 'clojurescript-mode-hook
+          (lambda ()
+             (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
 
-; (add-hook 'clojurec-mode-hook
-;           (lambda ()
-;              (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
+(add-hook 'clojurec-mode-hook
+          (lambda ()
+             (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
 
-; (add-hook 'clojure-mode-hook
-;           (lambda ()
-;              (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
+(add-hook 'clojure-mode-hook
+          (lambda ()
+             (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
 
 (add-to-list 'auto-mode-alist '("\\.carve\\'" . compilation-mode))
 
@@ -47,8 +47,6 @@
 
 (add-hook 'clojure-mode-hook 'cljr-mode-setup)
 (add-hook 'clojurec-mode-hook 'cljr-mode-setup)
-
-; (setq lsp-keymap-prefix "s-l")
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
@@ -109,6 +107,8 @@
 
 ;;; Keybinds
 
+(setq lsp-keymap-prefix "s-l")
+
 (global-set-key (kbd "M-{") 'flycheck-previous-error)
 (global-set-key (kbd "M-}") 'flycheck-next-error)
 
@@ -116,7 +116,7 @@
 
 (global-set-key (kbd "s-i") 'align-cljlet)
 
-;(global-set-key (kbd "M-q") 'lsp-format-buffer)
+(global-set-key (kbd "M-q") 'lsp-format-buffer)
 
 ;;; clojure.el ends here
 

@@ -36,9 +36,6 @@
 (require 'powerline)
 (powerline-center-theme)
 
-(global-linum-mode t)
-(setq linum-format "%3d ")
-
 (setq-default tab-width 2)
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -53,7 +50,7 @@
 
 (super-save-mode +1)
 
-(setq super-save-auto-save-when-idle t)
+(global-display-line-numbers-mode)
 
 (setq auto-save-default nil)
 

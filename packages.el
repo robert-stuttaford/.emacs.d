@@ -16,10 +16,9 @@
 (package-install 'use-package)
 
 (defvar my-packages
-  '(;gnu-elpa-keyring-update
-    ;; Clojure & friends
+  '(;; Clojure & friends
     clojure-mode
-    ;lsp-mode
+    lsp-mode
     cider
     clj-refactor
     align-cljlet
@@ -36,7 +35,7 @@
     popup
     ;; Project navigation
     projectile
-    ;; ivy / counsel / swiper 
+    ;; ivy / counsel / swiper
     counsel
     counsel-projectile
     flx

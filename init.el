@@ -5,8 +5,6 @@
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
 (defvar config-files
   '("packages.el"
     "general.el"
