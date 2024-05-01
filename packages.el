@@ -16,7 +16,7 @@
 (package-install 'use-package)
 
 (defvar my-packages
-  '(gnu-elpa-keyring-update
+  '(;gnu-elpa-keyring-update
     ;; Clojure & friends
     clojure-mode
     ;lsp-mode
