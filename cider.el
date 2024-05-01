@@ -31,9 +31,9 @@
 (setq cljr-favor-prefix-notation nil)
 (setq cljr-favor-private-functions nil)
 
-(require 'lsp)
+;(require 'lsp)
 
-(setq lsp-idle-delay 0)
+;(setq lsp-idle-delay 0)
 
 (defun find-definition ()
   "Try to find definition of cursor via LSP otherwise fallback to cider."
@@ -45,10 +45,10 @@
                (eq cursor (point)))
       (cider-find-var))))
 
-(define-key clojure-mode-map (kbd "M-.") #'find-definition)
-(define-key cider-mode-map (kbd "M-.") #'find-definition)
-(define-key clojurec-mode-map (kbd "M-.") #'find-definition)
-(define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
+;(define-key clojure-mode-map (kbd "M-.") #'find-definition)
+;(define-key cider-mode-map (kbd "M-.") #'find-definition)
+;(define-key clojurec-mode-map (kbd "M-.") #'find-definition)
+;(define-key clojurescript-mode-map (kbd "M-.") #'find-definition)
 
 (global-set-key [f7]
                 (lambda ()

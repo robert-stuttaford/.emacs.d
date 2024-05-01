@@ -5,20 +5,21 @@
 
 (require 'package)
 
-(add-to-list 'package-archives '("melpa" .        "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-;(add-to-list 'package-archives '("marmalade" .    "http://marmalade-repo.org/packages/") t)
 
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
 
+(package-install 'use-package)
+
 (defvar my-packages
   '(gnu-elpa-keyring-update
     ;; Clojure & friends
     clojure-mode
-    lsp-mode
+    ;lsp-mode
     cider
     clj-refactor
     align-cljlet
