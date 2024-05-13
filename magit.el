@@ -9,6 +9,8 @@
 
 (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
 
+(setq magit-show-long-lines-warning t)
+
 ;;; Keybinds
 
 (global-set-key [f4] 'magit-status)

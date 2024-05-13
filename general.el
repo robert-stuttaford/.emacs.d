@@ -50,7 +50,7 @@
 
 (super-save-mode +1)
 
-(global-display-line-numbers-mode)
+;(global-display-line-numbers-mode)
 
 (setq auto-save-default nil)
 
