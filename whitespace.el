@@ -5,7 +5,7 @@
 
 (global-whitespace-mode)
 
-(setq whitespace-line-column 154)
+(setq whitespace-line-column 157)
 (setq whitespace-style '(face trailing tabs lines))
 
 (defun cleanup-buffer ()

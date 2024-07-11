@@ -26,17 +26,13 @@
 (add-hook 'clojurec-mode-hook 'idle-highlight-mode)
 (add-hook 'clojurec-mode-hook 'lsp)
 
-;; (add-hook 'clojurescript-mode-hook
-;;           (lambda ()
-;;              (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
+(defun format-buffer-before-save-hook ()
+  "Format buffer before save."
+  (add-hook 'before-save-hook 'lsp-format-buffer nil 't))
 
-;; (add-hook 'clojurec-mode-hook
-;;           (lambda ()
-;;              (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
-
-;; (add-hook 'clojure-mode-hook
-;;           (lambda ()
-;;              (add-hook 'before-save-hook 'lsp-format-buffer nil 't)))
+;; (add-hook 'clojurescript-mode-hook 'format-buffer-before-save-hook)
+;; (add-hook 'clojurec-mode-hook 'format-buffer-before-save-hook)
+;; (add-hook 'clojure-mode-hook 'format-buffer-before-save-hook)
 
 (add-to-list 'auto-mode-alist '("\\.carve\\'" . compilation-mode))
 
