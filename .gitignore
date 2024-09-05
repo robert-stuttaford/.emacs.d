@@ -15,3 +15,5 @@ projectile-bookmarks.eld
 network-security.data
 recentf
 .lsp-session-*
+*.elc
+eln-cache
