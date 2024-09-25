@@ -45,7 +45,6 @@
 (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
 (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
 
-
 ;;; Super Save
 
 (super-save-mode +1)
