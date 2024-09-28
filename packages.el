@@ -45,6 +45,7 @@
     centaur-tabs
     ;; git
     magit
+    magit-todos
     git-link
     ;; Misc.
     buffer-move

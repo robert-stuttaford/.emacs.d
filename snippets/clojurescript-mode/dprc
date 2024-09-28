@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dprc
+# key: dprc
+# --
+(ui.debug/debug-pre )

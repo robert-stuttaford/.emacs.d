@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: dpr
+# key: dpr
+# --
+            [cognician.ui.components.debug :as ui.debug]

@@ -74,4 +74,9 @@
               show-paren-style 'parenthesis
               show-paren-delay 0)
 
+;; magit-todos
+(use-package magit-todos
+  :after magit
+  :config (magit-todos-mode 1))
+
 ;;; general.el ends here
