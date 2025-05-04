@@ -17,3 +17,4 @@ recentf
 .lsp-session-*
 *.elc
 eln-cache
+projects

@@ -22,9 +22,6 @@
      ("DEPRECATED" font-lock-doc-face bold) ("NOTE" success bold)
      ("BUG" error bold) ("XXX" font-lock-constant-face bold)
      ("todo" warning bold)))
- '(magit-todos-branch-list-merge-base-ref "develop")
- '(magit-todos-exclude-globs
-   '(".git/ src/radiant src/cognician/builder src/cognician/externalia src/cognician/playwright src/cognician/radiant src/cognician/semaphore src/cognician/tools src/cognician/variables resources/ tools/ src/cognician/builder2 src/cognician/chat src/cognician/feedback_assesssment"))
  '(package-selected-packages nil))
 
 ;;; custom.el ends here
