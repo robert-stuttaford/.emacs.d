@@ -41,6 +41,8 @@
   (clj-refactor-mode 1)
   (cljr-add-keybindings-with-prefix "s-r"))
 
+(setq cljr-insert-newline-after-require nil)
+
 (add-hook 'clojure-mode-hook 'cljr-mode-setup)
 (add-hook 'clojurec-mode-hook 'cljr-mode-setup)
 
@@ -85,7 +87,10 @@
   (*fn 'defun)
   (*let 'defun)
   ;; uix
-  (defui 'defun))
+  (defui 'defun)
+  ;; rum
+  (rum/defc 'defun)
+  (rum/defcs 'defun))
 
 (require 'flycheck-clj-kondo)
 
