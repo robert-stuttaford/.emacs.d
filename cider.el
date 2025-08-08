@@ -12,7 +12,6 @@
 (setq cider-repl-display-help-banner nil)
 (setq cider-save-file-on-load nil)
 (setq cider-print-options '(("right-margin" 122)))
-(setq cider-show-error-buffer t)
 
 (setq
    cider-repl-pop-to-buffer-on-connect nil
@@ -34,6 +33,7 @@
 (require 'lsp)
 
 (setq lsp-idle-delay 0)
+(setq lsp-log-io t)
 
 (defun find-definition ()
   "Try to find definition of cursor via LSP otherwise fallback to cider."
