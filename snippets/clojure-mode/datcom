@@ -3,7 +3,8 @@
 # key: datcom
 # --
 (comment
-  (require '[cognician.base.datomic :as datomic]
+  (require '[cognician.base.datomic-otel :as datomic]
+           '[cognician.model.seed-data.activate :as sda]
            '[datomic.api :as d])
 
   (def db (datomic/db))

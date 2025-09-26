@@ -33,7 +33,6 @@
 (require 'lsp)
 
 (setq lsp-idle-delay 0)
-(setq lsp-log-io t)
 
 (defun find-definition ()
   "Try to find definition of cursor via LSP otherwise fallback to cider."

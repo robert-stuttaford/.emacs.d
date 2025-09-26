@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: lik
+# key: lik
+# --
+(logging/info-kw+edn )
