@@ -90,7 +90,9 @@
   (defui 'defun)
   ;; rum
   (rum/defc 'defun)
-  (rum/defcs 'defun))
+  (rum/defcs 'defun)
+  ;; shadow
+  (shadow.modern/js-await 'defun))
 
 (require 'flycheck-clj-kondo)
 
