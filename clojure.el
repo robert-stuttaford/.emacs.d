@@ -92,7 +92,10 @@
   (rum/defc 'defun)
   (rum/defcs 'defun)
   ;; shadow
-  (shadow.modern/js-await 'defun))
+  (shadow.modern/js-await 'defun)
+  ;; test.check
+  (prop/for-all 'defun)
+  )
 
 (require 'flycheck-clj-kondo)
 
