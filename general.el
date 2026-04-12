@@ -74,4 +74,10 @@
               show-paren-style 'parenthesis
               show-paren-delay 0)
 
+;;; Prevent scrollwheel changing font size
+
+(global-set-key (kbd "<pinch>") 'ignore)
+(global-set-key (kbd "<C-wheel-up>") 'ignore)
+(global-set-key (kbd "<C-wheel-down>") 'ignore)
+
 ;;; general.el ends here
