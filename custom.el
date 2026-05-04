@@ -23,6 +23,207 @@
      ("DEPRECATED" font-lock-doc-face bold) ("NOTE" success bold)
      ("BUG" error bold) ("XXX" font-lock-constant-face bold)
      ("todo" warning bold)))
- '(package-selected-packages nil))
+ '(package-selected-packages nil)
+ '(safe-local-variable-values
+   '((eval when (boundp 'lsp-file-watch-ignored-directories)
+           (let*
+               ((root
+                 (file-truename
+                  (locate-dominating-file default-directory
+                                          ".dir-locals.el")))
+                (allow-map
+                 '(("" ".buildkite" "dev" "src" "test" "tf" "tools")
+                   ("tf" "modules") ("tf/modules" "pun")
+                   ("tf/modules/pun" "clj")))
+                (directory-children
+                 (lambda (dir)
+                   (seq-filter
+                    (lambda (path)
+                      (and (file-directory-p path)
+                           (not
+                            (member
+                             (file-name-nondirectory
+                              (directory-file-name path))
+                             '("." "..")))))
+                    (directory-files dir t nil t))))
+                (ignore-dir
+                 (lambda (dir)
+                   (concat "\\`" (regexp-quote (file-truename dir))
+                           "/?\\'")))
+                (ignored-regexps nil))
+             (require 'seq)
+             (dolist (entry allow-map)
+               (let*
+                   ((relative-parent (car entry))
+                    (allowed-names (cdr entry))
+                    (parent-dir
+                     (file-name-as-directory
+                      (expand-file-name relative-parent root))))
+                 (when (file-directory-p parent-dir)
+                   (dolist
+                       (child (funcall directory-children parent-dir))
+                     (let
+                         ((name
+                           (file-name-nondirectory
+                            (directory-file-name child))))
+                       (unless (member name allowed-names)
+                         (push (funcall ignore-dir child)
+                               ignored-regexps)))))))
+             (setq ignored-regexps
+                   (sort (delete-dups ignored-regexps) #'string<))
+             (dolist (re ignored-regexps)
+               (add-to-list 'lsp-file-watch-ignored-directories re))))
+     (eval when (boundp 'lsp-file-watch-ignored-directories)
+           (let*
+               ((root
+                 (file-truename
+                  (locate-dominating-file default-directory
+                                          ".dir-locals.el")))
+                (allow-map
+                 '(("" ".buildkite" "dev" "src" "test" "tf" "tools")
+                   ("tf" "modules") ("tf/modules" "pun")
+                   ("tf/modules/pun" "clj")))
+                (directory-children
+                 (lambda (dir)
+                   (seq-filter
+                    (lambda (path)
+                      (and (file-directory-p path)
+                           (not
+                            (member
+                             (file-name-nondirectory
+                              (directory-file-name path))
+                             '("." "..")))))
+                    (directory-files dir t nil t))))
+                (ignore-dir
+                 (lambda (dir)
+                   (concat "\\`" (regexp-quote (file-truename dir))
+                           "/?\\'")))
+                (ignored-regexps nil))
+             (require 'seq)
+             (dolist (entry allow-map)
+               (let*
+                   ((relative-parent (car entry))
+                    (allowed-names (cdr entry))
+                    (parent-dir
+                     (file-name-as-directory
+                      (expand-file-name relative-parent root))))
+                 (when (file-directory-p parent-dir)
+                   (dolist
+                       (child (funcall directory-children parent-dir))
+                     (let
+                         ((name
+                           (file-name-nondirectory
+                            (directory-file-name child))))
+                       (unless (member name allowed-names)
+                         (push (funcall ignore-dir child)
+                               ignored-regexps)))))))
+             (setq ignored-regexps
+                   (sort (delete-dups ignored-regexps) #'string<))
+             (dolist (re ignored-regexps)
+               (add-to-list 'lsp-file-watch-ignored-directories re))
+             (message
+              "lsp-file-watch-ignored-directories added by .dir-locals.el:\12%s"
+              (mapconcat #'identity ignored-regexps "\12"))))
+     (eval when (boundp 'lsp-file-watch-ignored-directories)
+           (let*
+               ((root
+                 (file-truename
+                  (locate-dominating-file default-directory
+                                          ".dir-locals.el")))
+                (allow-map
+                 '(("" ".buildkite" "dev" "src" "test" "tf" "tools")
+                   ("tf" "modules") ("tf/modules" "pun")
+                   ("tf/modules/pun" "clj")))
+                (directory-children
+                 (lambda (dir)
+                   (seq-filter
+                    (lambda (path)
+                      (and (file-directory-p path)
+                           (not
+                            (member
+                             (file-name-nondirectory
+                              (directory-file-name path))
+                             '("." "..")))))
+                    (directory-files dir t
+                                     "\\`[^.]\\|\\`\\.buildkite\\'"))))
+                (ignore-dir
+                 (lambda (dir)
+                   (concat "\\`" (regexp-quote (file-truename dir))
+                           "/?\\'")))
+                (ignored-regexps nil))
+             (require 'seq)
+             (dolist (entry allow-map)
+               (let*
+                   ((relative-parent (car entry))
+                    (allowed-names (cdr entry))
+                    (parent-dir
+                     (file-name-as-directory
+                      (expand-file-name relative-parent root))))
+                 (when (file-directory-p parent-dir)
+                   (dolist
+                       (child (funcall directory-children parent-dir))
+                     (let
+                         ((name
+                           (file-name-nondirectory
+                            (directory-file-name child))))
+                       (unless (member name allowed-names)
+                         (push (funcall ignore-dir child)
+                               ignored-regexps)))))))
+             (setq ignored-regexps
+                   (sort (delete-dups ignored-regexps) #'string<))
+             (dolist (re ignored-regexps)
+               (add-to-list 'lsp-file-watch-ignored-directories re))))
+     (eval when (boundp 'lsp-file-watch-ignored-directories)
+           (let*
+               ((root
+                 (file-truename
+                  (locate-dominating-file default-directory
+                                          ".dir-locals.el")))
+                (allow-map
+                 '(("" ".buildkite" "dev" "src" "test" "tf" "tools")
+                   ("tf" "modules") ("tf/modules" "pun")
+                   ("tf/modules/pun" "clj")))
+                (directory-children
+                 (lambda (dir)
+                   (seq-filter
+                    (lambda (path)
+                      (and (file-directory-p path)
+                           (not
+                            (member
+                             (file-name-nondirectory
+                              (directory-file-name path))
+                             '("." "..")))))
+                    (directory-files dir t
+                                     "\\`[^.]\\|\\`\\.buildkite\\'"))))
+                (ignore-dir
+                 (lambda (dir)
+                   (concat "\\`" (regexp-quote (file-truename dir))
+                           "/?\\'")))
+                (ignored-regexps nil))
+             (require 'seq)
+             (dolist (entry allow-map)
+               (let*
+                   ((relative-parent (car entry))
+                    (allowed-names (cdr entry))
+                    (parent-dir
+                     (file-name-as-directory
+                      (expand-file-name relative-parent root))))
+                 (when (file-directory-p parent-dir)
+                   (dolist
+                       (child (funcall directory-children parent-dir))
+                     (let
+                         ((name
+                           (file-name-nondirectory
+                            (directory-file-name child))))
+                       (unless (member name allowed-names)
+                         (push (funcall ignore-dir child)
+                               ignored-regexps)))))))
+             (setq ignored-regexps
+                   (sort (delete-dups ignored-regexps) #'string<))
+             (dolist (re ignored-regexps)
+               (add-to-list 'lsp-file-watch-ignored-directories re))
+             (message
+              "lsp-file-watch-ignored-directories added by .dir-locals.el:\12%s"
+              (mapconcat #'identity ignored-regexps "\12")))))))
 
 ;;; custom.el ends here

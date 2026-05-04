@@ -32,6 +32,8 @@
 
 (require 'lsp)
 
+(setq lsp-log-max t)
+
 (setq lsp-idle-delay 0)
 
 (defun find-definition ()

@@ -15,4 +15,8 @@
 
 (global-set-key [f4] 'magit-status)
 
+(with-eval-after-load 'magit
+    ;; https://github.com/magit/magit/issues/5557
+    (defalias 'magit--any 'cl-member-if))
+
 ;;; magit.el ends here
