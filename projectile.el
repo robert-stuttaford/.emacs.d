@@ -14,6 +14,8 @@
 
 (setq projectile-create-missing-test-files t)
 
+(setq projectile-warn-when-dirconfig-is-ignored nil)
+
 ;;; Keybinds
 
 (require 'projectile)

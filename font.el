@@ -6,7 +6,7 @@
 ;;(set-face-attribute 'default nil :height 140)
 ;(set-frame-font "Jetbrains Mono 16")
 ;(set-frame-font "Fira Code 16")
-(set-frame-font "Iosevka Term 16")
+(set-frame-font "Iosevka Term 18")
 
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
