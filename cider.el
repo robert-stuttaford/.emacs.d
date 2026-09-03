@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- CIDER configuration
 ;;; Commentary:
 ;;; CIDER configuration

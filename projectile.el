@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- Projectile
 ;;; Commentary:
 ;;; Projectile

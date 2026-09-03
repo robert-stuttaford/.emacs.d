@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- clojure-mode configuration
 ;;; Commentary:
 ;;; clojure-mode configuration
@@ -125,4 +126,3 @@
 (global-set-key (kbd "M-q") 'lsp-format-buffer)
 
 ;;; clojure.el ends here
-

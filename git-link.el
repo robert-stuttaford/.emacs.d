@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- Git Link
 ;;; Commentary:
 ;;; Git Link

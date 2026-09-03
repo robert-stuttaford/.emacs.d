@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- Centaur Tabs
 ;;; Commentary:
 ;;; Centaur Tabs

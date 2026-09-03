@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- Font
 ;;; Commentary:
 ;;; Font

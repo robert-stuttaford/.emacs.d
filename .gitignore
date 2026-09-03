@@ -10,6 +10,7 @@ transient/
 bookmarks
 ido.last
 projectile-bookmarks.eld
+projectile-frecency.eld
 .cache
 .mc-lists.el
 network-security.data

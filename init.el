@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- Init
 ;;; Commentary:
 ;;; Init
