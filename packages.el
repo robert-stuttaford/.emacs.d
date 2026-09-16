@@ -4,6 +4,8 @@
 ;;; Packages
 ;;; Code:
 
+(autoload 'exec-path-from-shell-initialize "exec-path-from-shell" nil)
+
 (require 'package)
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)

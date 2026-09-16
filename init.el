@@ -23,8 +23,11 @@
     "custom.el")
   "Config files to load at launch.")
 
+(setq load-prefer-newer t)
+
 (dolist (cf config-files)
-  (load (expand-file-name cf user-emacs-directory)))
+  (load (file-name-sans-extension
+         (expand-file-name cf user-emacs-directory))))
 
 (load-theme 'tango-dark t)
 
@@ -33,6 +36,12 @@
 (setq image-types '(svg png gif tiff jpeg xpm xbm pbm))
 
 ;(setq inhibit-message nil)
+
+;; Compile personal configuration only; excludes vendor packages and saved data.
+;; (mapc #'byte-compile-file
+;;       (directory-files user-emacs-directory t "\\.el\\'"))
+;; (native-compile-async
+;;  (directory-files user-emacs-directory t "\\.el\\'"))
 
 
 ;;; init.el ends here

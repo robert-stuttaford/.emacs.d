@@ -4,6 +4,10 @@
 ;;; Projectile
 ;;; Code:
 
+(require 'projectile)
+
+(autoload 'counsel-projectile-mode "counsel-projectile" nil t)
+
 (projectile-mode)
 
 (setq projectile-completion-system 'ivy)
@@ -11,15 +15,10 @@
 (counsel-projectile-mode)
 
 (setq projectile-use-git-grep t)
-(setq projectile-show-paths-function 'projectile-hashify-with-relative-paths)
 
 (setq projectile-create-missing-test-files t)
 
-(setq projectile-warn-when-dirconfig-is-ignored nil)
-
 ;;; Keybinds
-
-(require 'projectile)
 
 (define-key projectile-mode-map [?\s-d] 'projectile-find-dir)
 (define-key projectile-mode-map [?\s-p] 'projectile-switch-project)

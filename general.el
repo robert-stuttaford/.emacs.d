@@ -4,6 +4,11 @@
 ;;; General
 ;;; Code:
 
+(autoload 'super-save-mode "super-save" nil t)
+(autoload 'global-company-mode "company" nil t)
+(autoload 'idle-highlight-mode "idle-highlight-mode" nil t)
+(autoload 'global-color-identifiers-mode "color-identifiers-mode" nil t)
+
 ;;; Switch off various annoying things
 
 (setq inhibit-startup-screen t)

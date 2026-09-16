@@ -70,13 +70,13 @@
                 (lambda () (interactive)
                   ;(setq cider-shadow-default-options "tools")
                   (cider-connect-clj&cljs
-                   (plist-put '(:host "localhost" :cljs-repl-type shadow)
+                   (plist-put (list :host "localhost" :cljs-repl-type 'shadow)
                               :port (cl-second (cl-first (cider-locate-running-nrepl-ports "/Users/robert/Code/Cognician/Monorepo/")))))))
 
 (global-set-key [C-S-f8]
                 (lambda () (interactive)
                   (cider-connect
-                   (plist-put '(:host "localhost")
+                   (plist-put (list :host "localhost")
                               :port (cl-second (cl-first (cider-locate-running-nrepl-ports "/Users/robert/Code/Cognician/Monorepo/")))))))
 
 (global-set-key [M-f1] 'cider-repl-clear-buffer)

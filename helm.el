@@ -1,7 +1,13 @@
+;;; -*- lexical-binding: t; -*-
 ;;; package --- Helm
 ;;; Commentary:
 ;;; Helm
 ;;; Code:
+
+(autoload 'helm-mode "helm-mode" nil t)
+(autoload 'helm-M-x "helm-command" nil t)
+(autoload 'helm-buffers-list "helm-buffers" nil t)
+(autoload 'helm-swoop "helm-swoop" nil t)
 
 (helm-mode 1)
 

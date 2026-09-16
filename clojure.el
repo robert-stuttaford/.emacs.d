@@ -4,6 +4,17 @@
 ;;; clojure-mode configuration
 ;;; Code:
 
+(autoload 'clj-refactor-mode "clj-refactor" nil t)
+(autoload 'cljr-add-keybindings-with-prefix "clj-refactor" nil)
+
+;; Declare settings for packages loaded later, without changing their defaults.
+(defvar cljr-insert-newline-after-require)
+(defvar company-idle-delay)
+(defvar company-minimum-prefix-length)
+(defvar lsp-lens-enable)
+(defvar lsp-signature-auto-activate)
+(defvar lsp-keymap-prefix)
+
 (require 'clojure-mode)
 
 (setq initial-major-mode 'clojure-mode)

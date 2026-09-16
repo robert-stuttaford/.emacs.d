@@ -15,6 +15,7 @@ projectile-frecency.eld
 .mc-lists.el
 network-security.data
 recentf
+recentf.eld
 .lsp-session-*
 *.elc
 eln-cache

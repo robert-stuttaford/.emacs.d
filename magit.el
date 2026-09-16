@@ -10,13 +10,13 @@
 
 (add-hook 'git-commit-mode-hook 'magit-commit-mode-init)
 
-(setq magit-show-long-lines-warning t)
-
 (require 'magit)
+
+(setq magit-show-long-lines-warning t)
 ;; ivy compatibility fix
 (with-eval-after-load 'magit
   (setq magit-completing-read-function
-        (lambda (prompt choices &optional predicate require-match initial-input hist def fallback)
+        (lambda (prompt choices &optional predicate require-match initial-input hist def _fallback)
           (let ((completing-read-function #'completing-read-default))
             (magit-builtin-completing-read
              prompt choices predicate require-match initial-input hist def)))))
