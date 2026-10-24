@@ -66,18 +66,23 @@
                 (lambda () (interactive)
                   (cider-connect '(:host "localhost" :port 7888))))
 
+(defun cognician-connect (&optional cljs)
+  "Connect to the current project's nREPL, including CLJS when CLJS is non-nil."
+  (interactive)
+  (let* ((root (clojure-project-dir))
+         (port (with-temp-buffer
+                 (insert-file-contents (expand-file-name ".nrepl-port" root))
+                 (string-to-number (buffer-string))))
+         (params (list :project-dir root :host "localhost" :port port)))
+    (if cljs
+        (cider-connect-clj&cljs (plist-put params :cljs-repl-type 'shadow))
+      (cider-connect params))))
+
 (global-set-key [C-S-f9]
                 (lambda () (interactive)
-                  ;(setq cider-shadow-default-options "tools")
-                  (cider-connect-clj&cljs
-                   (plist-put (list :host "localhost" :cljs-repl-type 'shadow)
-                              :port (cl-second (cl-first (cider-locate-running-nrepl-ports "/Users/robert/Code/Cognician/Monorepo/")))))))
+                  (cognician-connect t)))
 
-(global-set-key [C-S-f8]
-                (lambda () (interactive)
-                  (cider-connect
-                   (plist-put (list :host "localhost")
-                              :port (cl-second (cl-first (cider-locate-running-nrepl-ports "/Users/robert/Code/Cognician/Monorepo/")))))))
+(global-set-key [C-S-f8] 'cognician-connect)
 
 (global-set-key [M-f1] 'cider-repl-clear-buffer)
 

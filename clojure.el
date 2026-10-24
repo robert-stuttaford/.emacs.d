@@ -20,23 +20,28 @@
 (setq initial-major-mode 'clojure-mode)
 (setq clojure-align-forms-automatically t)
 
+(setq clojure-project-root-function
+      (lambda (&optional dir)
+        (or (locate-dominating-file (or dir default-directory) "deps.edn")
+            (clojure-project-root-path dir))))
+
 (add-hook 'clojure-mode-hook 'flycheck-mode)
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'idle-highlight-mode)
-(add-hook 'clojure-mode-hook 'lsp)
+(add-hook 'clojure-mode-hook #'lsp-deferred)
 
 (add-hook 'clojurescript-mode-hook 'flycheck-mode)
 (add-hook 'clojurescript-mode-hook 'paredit-mode)
 (add-hook 'clojurescript-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurescript-mode-hook 'idle-highlight-mode)
-(add-hook 'clojurescript-mode-hook 'lsp)
+(add-hook 'clojurescript-mode-hook #'lsp-deferred)
 
 (add-hook 'clojurec-mode-hook 'flycheck-mode)
 (add-hook 'clojurec-mode-hook 'paredit-mode)
 (add-hook 'clojurec-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'clojurec-mode-hook 'idle-highlight-mode)
-(add-hook 'clojurec-mode-hook 'lsp)
+(add-hook 'clojurec-mode-hook #'lsp-deferred)
 
 (defun format-buffer-before-save-hook ()
   "Format buffer before save."
