@@ -7,7 +7,7 @@
 (global-set-key
  [f1]
  (lambda () (interactive)
-   (find-file "~/Code/Cognician/Monorepo/dev/scratch/robert.clj")))
+   (find-file "~/Code/Cognician/Monorepo/c4/dev/scratch/robert.clj")))
 (global-set-key
  [f12]
  (lambda () (interactive)
